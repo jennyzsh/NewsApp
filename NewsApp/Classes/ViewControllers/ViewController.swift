@@ -8,17 +8,28 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        
+        self.tabBarController
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        NetworkManager.instance.requestData(type: .GET, URLString: "http://v.juhe.cn/weather/index", finish: { (result) in
+            print(result["reason"] as! String)
+        }, success: { (json) in
+            print("success!!")
+        }, fail: { (error) in
+            print("error!!")
+        })
+        
+        
+    }
+    
+    
 
 
 }
