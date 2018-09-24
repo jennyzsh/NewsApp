@@ -78,14 +78,110 @@
 		BACE0A3A215897AF00A9DB4F /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
-				BACE0A3B215897AF00A9DB4F /* AppDelegate.swift */,
-				BACE0A3D215897AF00A9DB4F /* ViewController.swift */,
+				BACE0A5721589E0C00A9DB4F /* SupportingFiles */,
+				BACE0A4D21589DF700A9DB4F /* Classes */,
+				BACE0A5421589DF700A9DB4F /* Resources */,
 				BACE0A3F215897AF00A9DB4F /* Main.storyboard */,
 				BACE0A42215897AF00A9DB4F /* Assets.xcassets */,
 				BACE0A44215897AF00A9DB4F /* LaunchScreen.storyboard */,
-				BACE0A47215897AF00A9DB4F /* Info.plist */,
 			);
 			path = NewsApp;
+			sourceTree = "<group>";
+		};
+		BACE0A4D21589DF700A9DB4F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BACE0A4E21589DF700A9DB4F /* CustomUI */,
+				BACE0A4F21589DF700A9DB4F /* DataManager */,
+				BACE0A5021589DF700A9DB4F /* CoreManagersAndDelegates */,
+				BACE0A5221589DF700A9DB4F /* GlobalClasses */,
+				BACE0A5321589DF700A9DB4F /* Utility */,
+				BACE0A5121589DF700A9DB4F /* ViewControllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BACE0A4E21589DF700A9DB4F /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		BACE0A4F21589DF700A9DB4F /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		BACE0A5021589DF700A9DB4F /* CoreManagersAndDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				BACE0A5821589E7E00A9DB4F /* AppDelegate */,
+			);
+			path = CoreManagersAndDelegates;
+			sourceTree = "<group>";
+		};
+		BACE0A5121589DF700A9DB4F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BACE0A3D215897AF00A9DB4F /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BACE0A5221589DF700A9DB4F /* GlobalClasses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GlobalClasses;
+			sourceTree = "<group>";
+		};
+		BACE0A5321589DF700A9DB4F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		BACE0A5421589DF700A9DB4F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BACE0A5521589DF700A9DB4F /* Image */,
+				BACE0A5621589DF700A9DB4F /* String */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BACE0A5521589DF700A9DB4F /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		BACE0A5621589DF700A9DB4F /* String */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		BACE0A5721589E0C00A9DB4F /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BACE0A47215897AF00A9DB4F /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		BACE0A5821589E7E00A9DB4F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BACE0A3B215897AF00A9DB4F /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,15 +258,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-NewsApp-checkManifestLockResult.txt",
 			);
@@ -184,16 +276,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NewsApp/Pods-NewsApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
