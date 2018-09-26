@@ -13,7 +13,6 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = UIColor.red
-        self.navigationController?.navigationBar.topItem?.title = "haha"
         
 
 

@@ -9,11 +9,13 @@
 import UIKit
 
 class ViewController: BaseViewController, UITabBarControllerDelegate {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.topItem?.title = "1"
+
         
-        self.tabBarController
 
     }
     
@@ -25,6 +27,9 @@ class ViewController: BaseViewController, UITabBarControllerDelegate {
         }, fail: { (error) in
             print("error!!")
         })
+        
+        self.tabBarController?.viewControllers = [ViewController(), SecondViewController()]
+        self.tabBarController?.selectedIndex = 0
         
         
     }
