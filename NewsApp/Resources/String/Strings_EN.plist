@@ -2,6 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Confirm</key>
+	<string>Confirm</string>
+	<key>Cancel</key>
+	<string>Cancel</string>
+	<key>SelectLang</key>
+	<string>Select Language</string>
+	<key>English</key>
+	<string>English</string>
+	<key>Simplified_Chinese</key>
+	<string>Simplified Chinese</string>
+	<key>Traditional_Chinese</key>
+	<string>Traditional Chinese</string>
 	<key>Home</key>
 	<string>Home</string>
 	<key>Me</key>
