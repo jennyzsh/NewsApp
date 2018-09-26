@@ -21,35 +21,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxn-Ku-x6S">
-                    <rect key="frame" x="20" y="20" width="30" height="30"/>
-                    <state key="normal" title="EN"/>
+                    <rect key="frame" x="20" y="20" width="106" height="30"/>
+                    <state key="normal" title="Select Lanuage"/>
                     <connections>
-                        <action selector="didClickBtnEN:" destination="-1" eventType="touchUpInside" id="Cd1-YC-SYc"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5H-kg-N9l">
-                    <rect key="frame" x="20" y="80" width="30" height="30"/>
-                    <state key="normal" title="TC"/>
-                    <connections>
-                        <action selector="didClickBtnTC:" destination="-1" eventType="touchUpInside" id="HBS-dm-ZAj"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErL-oT-mSH">
-                    <rect key="frame" x="20" y="140" width="30" height="30"/>
-                    <state key="normal" title="SC"/>
-                    <connections>
-                        <action selector="didClickBtnSC:" destination="-1" eventType="touchUpInside" id="gjl-BW-bPE"/>
+                        <action selector="didClickBtnSelectLang:" destination="-1" eventType="touchUpInside" id="6d9-DA-4on"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Mxn-Ku-x6S" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="38u-Ty-ndo"/>
-                <constraint firstItem="R5H-kg-N9l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="3ej-27-7gF"/>
-                <constraint firstItem="ErL-oT-mSH" firstAttribute="top" secondItem="R5H-kg-N9l" secondAttribute="bottom" constant="30" id="BnM-In-7Jz"/>
                 <constraint firstItem="Mxn-Ku-x6S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="qyp-bQ-eeD"/>
-                <constraint firstItem="ErL-oT-mSH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="vAp-CQ-xEZ"/>
-                <constraint firstItem="R5H-kg-N9l" firstAttribute="top" secondItem="Mxn-Ku-x6S" secondAttribute="bottom" constant="30" id="xMq-R9-zbv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
