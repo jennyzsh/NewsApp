@@ -12,15 +12,19 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = UIColor.red
-        
-
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.resetContent()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        //        self.navigationController?.navigationBar.tintColor = Color.HeaderGray
+    }
+    
+    func resetContent() {
 
     }
+    
+    
 }

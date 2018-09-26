@@ -13,13 +13,12 @@ class ViewController: BaseViewController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.topItem?.title = "1"
-
-        
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.title = "1"
+        self.view.backgroundColor = UIColor.white
+
         NetworkManager.instance.requestData(type: .GET, URLString: "http://v.juhe.cn/weather/index", finish: { (result) in
             print(result["reason"] as! String)
         }, success: { (json) in
@@ -27,9 +26,6 @@ class ViewController: BaseViewController, UITabBarControllerDelegate {
         }, fail: { (error) in
             print("error!!")
         })
-        
-        self.tabBarController?.viewControllers = [ViewController(), SecondViewController()]
-        self.tabBarController?.selectedIndex = 0
         
         
     }
