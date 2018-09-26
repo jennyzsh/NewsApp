@@ -16,8 +16,21 @@ class MeViewController: BaseViewController {
     
     override func resetContent() {
         self.navigationController?.navigationBar.barTintColor = UIColor.green
-        self.navigationController?.navigationBar.topItem?.title = "Me"
-
+        self.navigationController?.navigationBar.topItem?.title = StringUtility.getStringOf(keyName: "Me")
     }
-
+    
+    @IBAction func didClickBtnEN(_ sender: UIButton) {
+        LanguageUtility.lang = .en
+        print("Select EN")
+    }
+    
+    @IBAction func didClickBtnTC(_ sender: UIButton) {
+        LanguageUtility.lang = .tc
+        print("Select TC")
+    }
+    
+    @IBAction func didClickBtnSC(_ sender: UIButton) {
+        LanguageUtility.lang = .sc
+        print("Select SC")
+    }
 }
