@@ -15,8 +15,12 @@
 	<key>Traditional_Chinese</key>
 	<string>繁体中文</string>
 	<key>Home</key>
-	<string>SC_主页</string>
+	<string>主页</string>
 	<key>Me</key>
-	<string>SC_我</string>
+	<string>我</string>
+	<key>Subscribe</key>
+	<string>订阅</string>
+	<key>Note</key>
+	<string>笔记</string>
 </dict>
 </plist>

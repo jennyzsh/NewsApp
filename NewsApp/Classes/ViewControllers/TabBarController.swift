@@ -20,8 +20,16 @@ class TabBarController: UITabBarController {
         homeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         vcList.append(homeViewController)
         
+        let subscribeViewController = SubscribeViewController()
+        subscribeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        vcList.append(subscribeViewController)
+        
+        let noteViewController = NoteViewController()
+        noteViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
+        vcList.append(noteViewController)
+        
         let meViewController = MeViewController()
-        meViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
+        meViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 3)
         vcList.append(meViewController)
         
         self.viewControllers = vcList

@@ -18,5 +18,9 @@
 	<string>Home</string>
 	<key>Me</key>
 	<string>Me</string>
+	<key>Subscribe</key>
+	<string>Subscribe</string>
+	<key>Note</key>
+	<string>Note</string>
 </dict>
 </plist>

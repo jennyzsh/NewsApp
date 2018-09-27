@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		399FB5E0B52C20A2326724AD /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E840BCAA6F75FF91B4D3B7 /* Pods_NewsApp.framework */; };
+		BA15C097215C849B00BA5CEB /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15C095215C849B00BA5CEB /* NoteViewController.swift */; };
+		BA15C098215C849B00BA5CEB /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA15C096215C849B00BA5CEB /* NoteViewController.xib */; };
+		BA15C09B215C84AF00BA5CEB /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15C099215C84AF00BA5CEB /* SubscribeViewController.swift */; };
+		BA15C09C215C84AF00BA5CEB /* SubscribeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA15C09A215C84AF00BA5CEB /* SubscribeViewController.xib */; };
 		BA6303EA215B72D1009B93E8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6303E9215B72D1009B93E8 /* TabBarController.swift */; };
 		BA6303EF215B7561009B93E8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6303ED215B7561009B93E8 /* HomeViewController.swift */; };
 		BA6303F0215B7561009B93E8 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA6303EE215B7561009B93E8 /* HomeViewController.xib */; };
@@ -31,6 +35,10 @@
 		481FAD85396F1ED4E8260CA6 /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
 		66E840BCAA6F75FF91B4D3B7 /* Pods_NewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D7FCDC62E02D6991384A7B /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		BA15C095215C849B00BA5CEB /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		BA15C096215C849B00BA5CEB /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
+		BA15C099215C84AF00BA5CEB /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
+		BA15C09A215C84AF00BA5CEB /* SubscribeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeViewController.xib; sourceTree = "<group>"; };
 		BA6303E9215B72D1009B93E8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BA6303ED215B7561009B93E8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA6303EE215B7561009B93E8 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -79,6 +87,24 @@
 				481FAD85396F1ED4E8260CA6 /* Pods-NewsApp.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA15C093215C848B00BA5CEB /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				BA15C095215C849B00BA5CEB /* NoteViewController.swift */,
+				BA15C096215C849B00BA5CEB /* NoteViewController.xib */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		BA15C094215C848C00BA5CEB /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				BA15C099215C84AF00BA5CEB /* SubscribeViewController.swift */,
+				BA15C09A215C84AF00BA5CEB /* SubscribeViewController.xib */,
+			);
+			path = Subscribe;
 			sourceTree = "<group>";
 		};
 		BA6303EB215B754D009B93E8 /* Me */ = {
@@ -176,6 +202,8 @@
 		BACE0A5121589DF700A9DB4F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BA15C093215C848B00BA5CEB /* Note */,
+				BA15C094215C848C00BA5CEB /* Subscribe */,
 				BA6303EC215B754D009B93E8 /* Home */,
 				BA6303EB215B754D009B93E8 /* Me */,
 				BACE0A3D215897AF00A9DB4F /* ViewController.swift */,
@@ -307,7 +335,9 @@
 				BACE0A46215897AF00A9DB4F /* LaunchScreen.storyboard in Resources */,
 				BACE0A43215897AF00A9DB4F /* Assets.xcassets in Resources */,
 				BA6303F4215B756E009B93E8 /* MeViewController.xib in Resources */,
+				BA15C09C215C84AF00BA5CEB /* SubscribeViewController.xib in Resources */,
 				BA6303F0215B7561009B93E8 /* HomeViewController.xib in Resources */,
+				BA15C098215C849B00BA5CEB /* NoteViewController.xib in Resources */,
 				BA6303F8215B7BE0009B93E8 /* Strings_TC.plist in Resources */,
 				BA6303FA215B7BEA009B93E8 /* Strings_SC.plist in Resources */,
 				BA6303F6215B7BD3009B93E8 /* Strings_EN.plist in Resources */,
@@ -367,11 +397,13 @@
 				BA630400215B7DA8009B93E8 /* GlobalConst.swift in Sources */,
 				BAACF7F12158CCF400530793 /* NetworkManager.swift in Sources */,
 				BA6303FC215B7C60009B93E8 /* StringUtility.swift in Sources */,
+				BA15C097215C849B00BA5CEB /* NoteViewController.swift in Sources */,
 				BA6303FE215B7CC6009B93E8 /* LanguageUtility.swift in Sources */,
 				BA6303F3215B756E009B93E8 /* MeViewController.swift in Sources */,
 				BAACF7F32158E27500530793 /* BaseViewController.swift in Sources */,
 				BACE0A3E215897AF00A9DB4F /* ViewController.swift in Sources */,
 				BA6303EA215B72D1009B93E8 /* TabBarController.swift in Sources */,
+				BA15C09B215C84AF00BA5CEB /* SubscribeViewController.swift in Sources */,
 				BACE0A3C215897AF00A9DB4F /* AppDelegate.swift in Sources */,
 				BA6303EF215B7561009B93E8 /* HomeViewController.swift in Sources */,
 			);
