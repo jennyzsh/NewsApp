@@ -8,6 +8,8 @@
 	<string>Cancel</string>
 	<key>SelectLang</key>
 	<string>Select Language</string>
+	<key>SelectThemeColor</key>
+	<string>Select Theme Color</string>
 	<key>English</key>
 	<string>English</string>
 	<key>Simplified_Chinese</key>

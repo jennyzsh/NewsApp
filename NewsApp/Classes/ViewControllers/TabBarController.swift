@@ -14,7 +14,9 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.setupObserver()
+        self.changeThemeColor()
         
         let homeViewController = HomeViewController()
         homeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
@@ -33,8 +35,14 @@ class TabBarController: UITabBarController {
         vcList.append(meViewController)
         
         self.viewControllers = vcList
-        
-        
-
     }
+    
+    func setupObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(TabBarController.changeThemeColor), name: Notification.Name(NotificationKey.ThemeColor_Did_Change_Notify), object: nil)
+    }
+    
+    @objc func changeThemeColor() {
+        UITabBar.appearance().tintColor = Color.themeColorList[Color.themeColor.rawValue]
+    }
+    
 }

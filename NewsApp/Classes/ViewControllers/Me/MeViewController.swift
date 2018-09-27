@@ -24,7 +24,7 @@ class MeViewController: BaseViewController {
         super.viewDidAppear(animated)
     }
     
-    @IBAction func didClickBtnSelectLang(_ sender: UIButton) {
+    func selectLanguage() {
         let actionSheet = UIAlertController.init(title: StringUtility.getStringOf(keyName: "SelectLang"), message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: StringUtility.getStringOf(keyName: "Cancel"), style: .cancel, handler: nil))
         actionSheet.addAction(UIAlertAction(title: StringUtility.getStringOf(keyName: "English"), style: .default, handler: { (action) in
@@ -41,4 +41,20 @@ class MeViewController: BaseViewController {
         }))
         self.present(actionSheet, animated: true, completion: nil)
     }
+    
+    func selectThemeColor() {
+        self.navigationController?.pushViewController(SelectThemeColorViewController(), animated: true)
+//        let navController = UINavigationController(rootViewController: SelectThemeColorViewController())
+//        self.present(navController, animated: true, completion: nil)
+    }
+    
+    @IBAction func didClickBtnSelectLang(_ sender: UIButton) {
+        self.selectLanguage()
+    }
+    
+    @IBAction func didPressBtnSelectThemeColor(_ sender: UIButton) {
+        self.selectThemeColor()
+    }
+    
+    
 }

@@ -12,6 +12,11 @@
 		BA15C098215C849B00BA5CEB /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA15C096215C849B00BA5CEB /* NoteViewController.xib */; };
 		BA15C09B215C84AF00BA5CEB /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15C099215C84AF00BA5CEB /* SubscribeViewController.swift */; };
 		BA15C09C215C84AF00BA5CEB /* SubscribeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA15C09A215C84AF00BA5CEB /* SubscribeViewController.xib */; };
+		BA15C0A2215C8B8700BA5CEB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15C0A1215C8B8700BA5CEB /* Color.swift */; };
+		BA15C0A7215CC45400BA5CEB /* SelectThemeColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA15C0A5215CC45400BA5CEB /* SelectThemeColorViewController.xib */; };
+		BA15C0A8215CC45400BA5CEB /* SelectThemeColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15C0A6215CC45400BA5CEB /* SelectThemeColorViewController.swift */; };
+		BA15C0AB215CC4A100BA5CEB /* SelectThemeColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15C0A9215CC4A100BA5CEB /* SelectThemeColorTableViewCell.swift */; };
+		BA15C0AC215CC4A100BA5CEB /* SelectThemeColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA15C0AA215CC4A100BA5CEB /* SelectThemeColorTableViewCell.xib */; };
 		BA6303EA215B72D1009B93E8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6303E9215B72D1009B93E8 /* TabBarController.swift */; };
 		BA6303EF215B7561009B93E8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6303ED215B7561009B93E8 /* HomeViewController.swift */; };
 		BA6303F0215B7561009B93E8 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA6303EE215B7561009B93E8 /* HomeViewController.xib */; };
@@ -39,6 +44,11 @@
 		BA15C096215C849B00BA5CEB /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
 		BA15C099215C84AF00BA5CEB /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		BA15C09A215C84AF00BA5CEB /* SubscribeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeViewController.xib; sourceTree = "<group>"; };
+		BA15C0A1215C8B8700BA5CEB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		BA15C0A5215CC45400BA5CEB /* SelectThemeColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectThemeColorViewController.xib; sourceTree = "<group>"; };
+		BA15C0A6215CC45400BA5CEB /* SelectThemeColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectThemeColorViewController.swift; sourceTree = "<group>"; };
+		BA15C0A9215CC4A100BA5CEB /* SelectThemeColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectThemeColorTableViewCell.swift; sourceTree = "<group>"; };
+		BA15C0AA215CC4A100BA5CEB /* SelectThemeColorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectThemeColorTableViewCell.xib; sourceTree = "<group>"; };
 		BA6303E9215B72D1009B93E8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BA6303ED215B7561009B93E8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA6303EE215B7561009B93E8 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -107,9 +117,21 @@
 			path = Subscribe;
 			sourceTree = "<group>";
 		};
+		BA15C0A4215CC45400BA5CEB /* SelectTheme */ = {
+			isa = PBXGroup;
+			children = (
+				BA15C0A9215CC4A100BA5CEB /* SelectThemeColorTableViewCell.swift */,
+				BA15C0AA215CC4A100BA5CEB /* SelectThemeColorTableViewCell.xib */,
+				BA15C0A6215CC45400BA5CEB /* SelectThemeColorViewController.swift */,
+				BA15C0A5215CC45400BA5CEB /* SelectThemeColorViewController.xib */,
+			);
+			path = SelectTheme;
+			sourceTree = "<group>";
+		};
 		BA6303EB215B754D009B93E8 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				BA15C0A4215CC45400BA5CEB /* SelectTheme */,
 				BA6303F1215B756E009B93E8 /* MeViewController.swift */,
 				BA6303F2215B756E009B93E8 /* MeViewController.xib */,
 			);
@@ -179,6 +201,7 @@
 		BACE0A4E21589DF700A9DB4F /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				BA15C0A1215C8B8700BA5CEB /* Color.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -338,7 +361,9 @@
 				BA15C09C215C84AF00BA5CEB /* SubscribeViewController.xib in Resources */,
 				BA6303F0215B7561009B93E8 /* HomeViewController.xib in Resources */,
 				BA15C098215C849B00BA5CEB /* NoteViewController.xib in Resources */,
+				BA15C0A7215CC45400BA5CEB /* SelectThemeColorViewController.xib in Resources */,
 				BA6303F8215B7BE0009B93E8 /* Strings_TC.plist in Resources */,
+				BA15C0AC215CC4A100BA5CEB /* SelectThemeColorTableViewCell.xib in Resources */,
 				BA6303FA215B7BEA009B93E8 /* Strings_SC.plist in Resources */,
 				BA6303F6215B7BD3009B93E8 /* Strings_EN.plist in Resources */,
 			);
@@ -400,9 +425,12 @@
 				BA15C097215C849B00BA5CEB /* NoteViewController.swift in Sources */,
 				BA6303FE215B7CC6009B93E8 /* LanguageUtility.swift in Sources */,
 				BA6303F3215B756E009B93E8 /* MeViewController.swift in Sources */,
+				BA15C0A8215CC45400BA5CEB /* SelectThemeColorViewController.swift in Sources */,
 				BAACF7F32158E27500530793 /* BaseViewController.swift in Sources */,
+				BA15C0AB215CC4A100BA5CEB /* SelectThemeColorTableViewCell.swift in Sources */,
 				BACE0A3E215897AF00A9DB4F /* ViewController.swift in Sources */,
 				BA6303EA215B72D1009B93E8 /* TabBarController.swift in Sources */,
+				BA15C0A2215C8B8700BA5CEB /* Color.swift in Sources */,
 				BA15C09B215C84AF00BA5CEB /* SubscribeViewController.swift in Sources */,
 				BACE0A3C215897AF00A9DB4F /* AppDelegate.swift in Sources */,
 				BA6303EF215B7561009B93E8 /* HomeViewController.swift in Sources */,

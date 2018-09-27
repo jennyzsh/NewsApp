@@ -8,6 +8,8 @@
 	<string>取消</string>
 	<key>SelectLang</key>
 	<string>選擇語言</string>
+	<key>SelectThemeColor</key>
+	<string>選擇主題顏色</string>
 	<key>English</key>
 	<string>英语</string>
 	<key>Simplified_Chinese</key>

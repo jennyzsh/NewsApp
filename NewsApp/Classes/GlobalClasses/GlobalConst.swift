@@ -11,11 +11,13 @@ import UIKit
 //MARK: - Notification Key
 struct NotificationKey {
     static let Language_Did_Change_Notify    = "LanguageDidChangeNotify"
+    static let ThemeColor_Did_Change_Notify  = "ThemeColorDidChangeNotify"
 }
 
 class GlobalConst: NSObject {
     
     static let UserDefault_Language          = "UserDefault_Language"
+    static let UserDefault_ThemeColor        = "UserDefault_ThemeColor"
     
 
 
