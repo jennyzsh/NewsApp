@@ -8,8 +8,15 @@
 
 import UIKit
 
+//MARK: - Notification Key
+struct NotificationKey {
+    static let Language_Did_Change_Notify    = "LanguageDidChangeNotify"
+}
+
 class GlobalConst: NSObject {
     
     static let UserDefault_Language          = "UserDefault_Language"
+    
+
 
 }

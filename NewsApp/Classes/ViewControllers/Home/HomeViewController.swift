@@ -16,9 +16,8 @@ class HomeViewController: BaseViewController {
     }
     
     override func resetContent() {
-        self.navigationController?.navigationBar.barTintColor = UIColor.red
+        super.resetContent()
         self.navigationController?.navigationBar.topItem?.title = StringUtility.getStringOf(keyName: "Home")
-        
     }
 
 }

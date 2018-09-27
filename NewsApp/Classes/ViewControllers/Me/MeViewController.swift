@@ -12,26 +12,16 @@ class MeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     override func resetContent() {
-        self.navigationController?.navigationBar.barTintColor = UIColor.green
+        super.resetContent()
         self.navigationController?.navigationBar.topItem?.title = StringUtility.getStringOf(keyName: "Me")
     }
     
-    @IBAction func didClickBtnEN(_ sender: UIButton) {
-        LanguageUtility.lang = .en
-        print("Select EN")
-    }
-    
-    @IBAction func didClickBtnTC(_ sender: UIButton) {
-        LanguageUtility.lang = .tc
-        print("Select TC")
-    }
-    
-    @IBAction func didClickBtnSC(_ sender: UIButton) {
-        LanguageUtility.lang = .sc
-        print("Select SC")
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     @IBAction func didClickBtnSelectLang(_ sender: UIButton) {
@@ -39,14 +29,16 @@ class MeViewController: BaseViewController {
         actionSheet.addAction(UIAlertAction(title: StringUtility.getStringOf(keyName: "Cancel"), style: .cancel, handler: nil))
         actionSheet.addAction(UIAlertAction(title: StringUtility.getStringOf(keyName: "English"), style: .default, handler: { (action) in
             LanguageUtility.lang = .en
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationKey.Language_Did_Change_Notify), object: nil)
         }))
         actionSheet.addAction(UIAlertAction(title: StringUtility.getStringOf(keyName: "Simplified_Chinese"), style: .default, handler: { (action) in
             LanguageUtility.lang = .sc
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationKey.Language_Did_Change_Notify), object: nil)
         }))
         actionSheet.addAction(UIAlertAction(title: StringUtility.getStringOf(keyName: "Traditional_Chinese"), style: .default, handler: { (action) in
             LanguageUtility.lang = .tc
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationKey.Language_Did_Change_Notify), object: nil)
         }))
         self.present(actionSheet, animated: true, completion: nil)
     }
-    
 }
