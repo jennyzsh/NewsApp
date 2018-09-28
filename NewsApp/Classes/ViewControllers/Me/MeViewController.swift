@@ -17,7 +17,7 @@ class MeViewController: BaseViewController {
     
     override func resetContent() {
         super.resetContent()
-        self.navigationController?.navigationBar.topItem?.title = StringUtility.getStringOf(keyName: "Me")
+        self.navigationController?.navigationBar.topItem?.title = StringUtility.getStringOf(keyName: "Me")        
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -34,6 +34,8 @@
 		BACE0A3E215897AF00A9DB4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE0A3D215897AF00A9DB4F /* ViewController.swift */; };
 		BACE0A43215897AF00A9DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BACE0A42215897AF00A9DB4F /* Assets.xcassets */; };
 		BACE0A46215897AF00A9DB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACE0A44215897AF00A9DB4F /* LaunchScreen.storyboard */; };
+		BAD35BB5215E2F8D006BC7B3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD35BB3215E2F8D006BC7B3 /* SearchViewController.swift */; };
+		BAD35BB6215E2F8D006BC7B3 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAD35BB4215E2F8D006BC7B3 /* SearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		BACE0A42215897AF00A9DB4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BACE0A45215897AF00A9DB4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BACE0A47215897AF00A9DB4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAD35BB3215E2F8D006BC7B3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BAD35BB4215E2F8D006BC7B3 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 		BA6303EC215B754D009B93E8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BAD35B88215DE7AC006BC7B3 /* SearchBar */,
 				BA6303ED215B7561009B93E8 /* HomeViewController.swift */,
 				BA6303EE215B7561009B93E8 /* HomeViewController.xib */,
 			);
@@ -295,6 +300,15 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		BAD35B88215DE7AC006BC7B3 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				BAD35BB3215E2F8D006BC7B3 /* SearchViewController.swift */,
+				BAD35BB4215E2F8D006BC7B3 /* SearchViewController.xib */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,6 +371,7 @@
 			files = (
 				BACE0A46215897AF00A9DB4F /* LaunchScreen.storyboard in Resources */,
 				BACE0A43215897AF00A9DB4F /* Assets.xcassets in Resources */,
+				BAD35BB6215E2F8D006BC7B3 /* SearchViewController.xib in Resources */,
 				BA6303F4215B756E009B93E8 /* MeViewController.xib in Resources */,
 				BA15C09C215C84AF00BA5CEB /* SubscribeViewController.xib in Resources */,
 				BA6303F0215B7561009B93E8 /* HomeViewController.xib in Resources */,
@@ -429,6 +444,7 @@
 				BAACF7F32158E27500530793 /* BaseViewController.swift in Sources */,
 				BA15C0AB215CC4A100BA5CEB /* SelectThemeColorTableViewCell.swift in Sources */,
 				BACE0A3E215897AF00A9DB4F /* ViewController.swift in Sources */,
+				BAD35BB5215E2F8D006BC7B3 /* SearchViewController.swift in Sources */,
 				BA6303EA215B72D1009B93E8 /* TabBarController.swift in Sources */,
 				BA15C0A2215C8B8700BA5CEB /* Color.swift in Sources */,
 				BA15C09B215C84AF00BA5CEB /* SubscribeViewController.swift in Sources */,
