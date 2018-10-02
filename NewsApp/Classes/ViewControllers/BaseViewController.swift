@@ -31,9 +31,16 @@ class BaseViewController: UIViewController {
 
     }
     
+    @objc func updateAppIconBadgeNumber() {
+        UIApplication.shared.applicationIconBadgeNumber = BadgeManager.applicationIconBadgeNumber
+    }
+    
     func setupObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.resetContent), name: NSNotification.Name(rawValue: NotificationKey.Language_Did_Change_Notify), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.resetContent), name: Notification.Name(NotificationKey.ThemeColor_Did_Change_Notify), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.resetContent), name: Notification.Name(rawValue: NotificationKey.ThemeColor_Did_Change_Notify), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.updateAppIconBadgeNumber), name: Notification.Name(rawValue: NotificationKey.AppIconBadgeNum_Did_Change_Notify), object: nil)
+
     }
     
     //MARK: - customize navigation bar

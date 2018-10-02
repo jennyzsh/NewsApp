@@ -26,17 +26,28 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
         lblTitle.font = UIFont.systemFont(ofSize: 18)
         self.setNavigationBarTitleView(lblTitle)
         
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        if let tabItems = tabBarController?.tabBar.items {
+//            let tabItem = tabItems[1]
+//            tabItem.badgeValue = "NEW"
+//        }
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        //        let navController = UINavigationController(rootViewController: SelectThemeColorViewController())
-        //        self.present(navController, animated: true, completion: nil)
         let navController = UINavigationController(rootViewController: SearchViewController())
         self.present(navController, animated: true, completion: nil)
     }
     
+    @IBAction func didPressIncreaseBadge(_ sender: UIButton) {
+        BadgeManager.applicationIconBadgeNumber += 1
+    }
     
-
+    @IBAction func didPressResetBadge(_ sender: UIButton) {
+        BadgeManager.resetAppIconBadgeNumber()
+    }
+    
 
 }

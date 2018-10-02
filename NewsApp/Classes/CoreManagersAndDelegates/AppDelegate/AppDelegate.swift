@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,11 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = UINavigationController(rootViewController: TabBarController())
         window?.makeKeyAndVisible()
         
-        
+        registerForBadgeNotifications(application)
         
         return true
     }
 
+    func registerForBadgeNotifications(_ application: UIApplication) {
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: .badge) { (granted, error) in
+                
+            }
+        } else { //If user is not on iOS 10 use the old methods we've been using
+            let notificationSettings = UIUserNotificationSettings(types: .badge, categories: nil)
+            application.registerUserNotificationSettings(notificationSettings)
+        }
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

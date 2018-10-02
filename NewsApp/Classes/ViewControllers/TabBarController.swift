@@ -39,10 +39,18 @@ class TabBarController: UITabBarController {
     
     func setupObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(TabBarController.changeThemeColor), name: Notification.Name(NotificationKey.ThemeColor_Did_Change_Notify), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TabBarController.updateTabBarBadgeNumber), name: Notification.Name(rawValue: NotificationKey.AppIconBadgeNum_Did_Change_Notify), object: nil)
+
     }
     
     @objc func changeThemeColor() {
         UITabBar.appearance().tintColor = Color.themeColorList[Color.themeColor.rawValue]
     }
     
+    @objc func updateTabBarBadgeNumber() {
+        if let tabItems = self.tabBar.items {
+            let tabItem = tabItems[0]
+            tabItem.badgeValue = BadgeManager.applicationIconBadgeNumber == 0 ? nil : "\(BadgeManager.applicationIconBadgeNumber)"
+        }
+    }
 }
