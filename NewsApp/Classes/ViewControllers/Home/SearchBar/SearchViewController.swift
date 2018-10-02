@@ -16,7 +16,25 @@ class SearchViewController: BaseViewController, UISearchBarDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.topItem?.title = StringUtility.getStringOf(keyName: "Search")
+        
+        //set up Navigation Bar TitleView
+        let lblTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
+        lblTitle.sizeToFit()
+        lblTitle.text =  StringUtility.getStringOf(keyName: "Search")
+        lblTitle.textAlignment = .center
+        lblTitle.font = UIFont.systemFont(ofSize: 18)
+        self.setNavigationBarTitleView(lblTitle)
+        
+        //set up Navigation Bar Right BarButton Item
+        let dismiss = UIBarButtonItem(title: "XXXX", style: .plain, target: self, action: #selector(SearchViewController.didPressRightBarButton))
+        dismiss.tintColor = Color.White
+        self.setNavigationBarRightButtonItem(dismiss)
+        
+        //set up Navigation Bar Left BarButton Item
+        let back = UIBarButtonItem(title: "<-", style: .plain, target: self, action: #selector(SearchViewController.didPressLeftBarButton))
+        back.tintColor = Color.White
+        self.setNavigationBarLeftButtonItem(back)
+
         self.setupSearchBar()
         
     }
@@ -36,5 +54,13 @@ class SearchViewController: BaseViewController, UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(searchBar.text!)
+    }
+    
+    @objc func didPressRightBarButton() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func didPressLeftBarButton() {
+        self.dismiss(animated: true, completion: nil)
     }
 }

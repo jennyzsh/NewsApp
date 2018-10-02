@@ -25,13 +25,35 @@ class BaseViewController: UIViewController {
     }
     
     @objc func resetContent() {
-        self.navigationController?.navigationBar.barTintColor = Color.themeColorList[Color.themeColor.rawValue]        
+        self.setNavigationBarBackground(color: Color.themeColorList[Color.themeColor.rawValue])
+        self.setNavigationBarRightButtonItem(nil)
+        self.setNavigationBarLeftButtonItem(nil)
+
     }
     
     func setupObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.resetContent), name: NSNotification.Name(rawValue: NotificationKey.Language_Did_Change_Notify), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.resetContent), name: Notification.Name(NotificationKey.ThemeColor_Did_Change_Notify), object: nil)
     }
+    
+    //MARK: - customize navigation bar
+    func setNavigationBarBackground(color: UIColor) {
+        self.navigationController?.navigationBar.barTintColor = color
+    }
+    
+    func setNavigationBarTitleView(_ titleView: UIView) {
+        self.navigationController?.navigationBar.topItem?.titleView = titleView
+    }
+    
+    func setNavigationBarRightButtonItem(_ rightButtonItem: UIBarButtonItem?) {
+        self.navigationController?.navigationBar.topItem?.setRightBarButton(rightButtonItem, animated: true)
+    }
+    
+    func setNavigationBarLeftButtonItem(_ leftButtonItem: UIBarButtonItem?) {
+        self.navigationController?.navigationBar.topItem?.setLeftBarButton(leftButtonItem, animated: true)
+    }
+    
+
     
     
 }

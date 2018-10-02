@@ -24,7 +24,13 @@ class SelectThemeColorViewController: BaseViewController, UITableViewDataSource,
     
     override func resetContent() {
         super.resetContent()
-        self.navigationController?.navigationBar.topItem?.title = StringUtility.getStringOf(keyName: "SelectThemeColor")
+        
+        let lblTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
+        lblTitle.sizeToFit()
+        lblTitle.text =  StringUtility.getStringOf(keyName: "SelectThemeColor")
+        lblTitle.textAlignment = .center
+        lblTitle.font = UIFont.systemFont(ofSize: 18)
+        self.setNavigationBarTitleView(lblTitle)
     }
     
     //MARK: - UITableViewDataSource

@@ -21,7 +21,13 @@ class NoteViewController: BaseViewController {
     
     override func resetContent() {
         super.resetContent()
-        self.navigationController?.navigationBar.topItem?.title = StringUtility.getStringOf(keyName: "Note")
+        
+        let lblTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
+        lblTitle.sizeToFit()
+        lblTitle.text =  StringUtility.getStringOf(keyName: "Note")
+        lblTitle.textAlignment = .center
+        lblTitle.font = UIFont.systemFont(ofSize: 18)
+        self.setNavigationBarTitleView(lblTitle)
 
     }
 }

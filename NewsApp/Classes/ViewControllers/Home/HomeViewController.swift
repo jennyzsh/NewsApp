@@ -13,12 +13,20 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.searchBar.delegate = self
+        self.searchBar.delegate = self 
     }
     
     override func resetContent() {
         super.resetContent()
-        self.navigationController?.navigationBar.topItem?.title = StringUtility.getStringOf(keyName: "Home")
+     
+        let lblTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
+        lblTitle.sizeToFit()
+        lblTitle.text =  StringUtility.getStringOf(keyName: "Home")
+        lblTitle.textAlignment = .center
+        lblTitle.font = UIFont.systemFont(ofSize: 18)
+        self.setNavigationBarTitleView(lblTitle)
+        
+        
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
