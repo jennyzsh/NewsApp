@@ -24,5 +24,7 @@
 	<string>訂閱</string>
 	<key>Note</key>
 	<string>筆記</string>
+	<key>Search</key>
+	<string>搜索</string>
 </dict>
 </plist>

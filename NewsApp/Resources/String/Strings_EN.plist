@@ -24,5 +24,7 @@
 	<string>Subscribe</string>
 	<key>Note</key>
 	<string>Note</string>
+	<key>Search</key>
+	<string>Search</string>
 </dict>
 </plist>

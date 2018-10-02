@@ -16,7 +16,7 @@ class SearchViewController: BaseViewController, UISearchBarDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.topItem?.title = StringUtility.getStringOf(keyName: "Home")
+        self.navigationController?.navigationBar.topItem?.title = StringUtility.getStringOf(keyName: "Search")
         self.setupSearchBar()
         
     }
@@ -30,6 +30,8 @@ class SearchViewController: BaseViewController, UISearchBarDelegate {
         navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         self.navigationItem.searchController = searchController
+        
+        searchController.searchBar.tintColor = Color.White
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
