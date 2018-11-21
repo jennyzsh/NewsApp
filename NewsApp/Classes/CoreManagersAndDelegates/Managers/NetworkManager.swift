@@ -18,25 +18,25 @@ enum MethodType {
 class NetworkManager: NSObject {
     static let instance = NetworkManager()
     
-    func requestData(type : MethodType, URLString : String, parameters : [String : Any]? = nil, finish: @escaping((_ result: [String: Any]) -> ()), success: @escaping((_ response: [String: Any]) -> ()), fail: @escaping((_ error: [String: Any]) -> ())) {
-
-        let method = type == .GET ? HTTPMethod.get : HTTPMethod.post
+    func requestData(_ type : MethodType, URLString : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : Dictionary<String, Any>) -> ()) {
         
-        Alamofire.request(URLString, method: method, parameters: parameters)
-            .responseJSON { (response) in
+        // 1.获取类型
+        let method = type == .GET ? HTTPMethod.get : HTTPMethod.post
 
-                if let result = response.result.value as? [String: Any] {
-                    
-                    finish(result)
-                    
-                    if response.result.isSuccess {
-                        success(result)
-                    } else if response.result.isFailure {
-                        fail(result)
-                    } else {
-                        
-                    }
-                }
+        // 2.发送网络请求
+        Alamofire.request(URLString, method: method, parameters: parameters).responseJSON { (response) in
+
+            // 3.获取结果
+            guard let result = response.result.value else {
+                print(response.result.error!)
+                return
+            }
+
+            // 4.将结果回调出去
+            finishedCallback(result as! Dictionary<String, Any>)
         }
+
     }
+    
+
 }

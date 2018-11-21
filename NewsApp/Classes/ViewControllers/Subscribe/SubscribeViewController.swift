@@ -12,10 +12,14 @@ class SubscribeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        self.present(LoginViewController(), animated: true, completion: nil)
+
     }
     
     override func resetContent() {

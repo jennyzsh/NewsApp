@@ -19,13 +19,6 @@ class ViewController: BaseViewController, UITabBarControllerDelegate {
         self.navigationController?.navigationBar.topItem?.title = "1"
         self.view.backgroundColor = UIColor.white
 
-        NetworkManager.instance.requestData(type: .GET, URLString: "http://v.juhe.cn/weather/index", finish: { (result) in
-            print(result["reason"] as! String)
-        }, success: { (json) in
-            print("success!!")
-        }, fail: { (error) in
-            print("error!!")
-        })
         
         
     }

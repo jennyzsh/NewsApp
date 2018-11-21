@@ -26,5 +26,7 @@
 	<string>筆記</string>
 	<key>Search</key>
 	<string>搜索</string>
+	<key>Welcome</key>
+	<string>歡迎使用KNews APP</string>
 </dict>
 </plist>

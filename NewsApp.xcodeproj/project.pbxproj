@@ -31,6 +31,10 @@
 		BA630400215B7DA8009B93E8 /* GlobalConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6303FF215B7DA8009B93E8 /* GlobalConst.swift */; };
 		BAACF7F12158CCF400530793 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAACF7F02158CCF400530793 /* NetworkManager.swift */; };
 		BAACF7F32158E27500530793 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAACF7F22158E27500530793 /* BaseViewController.swift */; };
+		BABF543821A44EC30088481D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543621A44EC30088481D /* LoginViewController.swift */; };
+		BABF543921A44EC30088481D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABF543721A44EC30088481D /* LoginViewController.xib */; };
+		BABF543B21A52AD60088481D /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543A21A52AD60088481D /* LoginManager.swift */; };
+		BABF543D21A53B3F0088481D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543C21A53B3F0088481D /* UIButton.swift */; };
 		BACE0A3C215897AF00A9DB4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE0A3B215897AF00A9DB4F /* AppDelegate.swift */; };
 		BACE0A3E215897AF00A9DB4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE0A3D215897AF00A9DB4F /* ViewController.swift */; };
 		BACE0A43215897AF00A9DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BACE0A42215897AF00A9DB4F /* Assets.xcassets */; };
@@ -66,6 +70,10 @@
 		BA6303FF215B7DA8009B93E8 /* GlobalConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConst.swift; sourceTree = "<group>"; };
 		BAACF7F02158CCF400530793 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BAACF7F22158E27500530793 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BABF543621A44EC30088481D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BABF543721A44EC30088481D /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		BABF543A21A52AD60088481D /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		BABF543C21A53B3F0088481D /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		BACE0A38215897AF00A9DB4F /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACE0A3B215897AF00A9DB4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BACE0A3D215897AF00A9DB4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,8 +167,18 @@
 			children = (
 				BAACF7F02158CCF400530793 /* NetworkManager.swift */,
 				BA21DC8C216363C400C97766 /* BadgeManager.swift */,
+				BABF543A21A52AD60088481D /* LoginManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		BABF543521A44EB20088481D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BABF543621A44EC30088481D /* LoginViewController.swift */,
+				BABF543721A44EC30088481D /* LoginViewController.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		BACE0A2F215897AF00A9DB4F = {
@@ -210,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				BA15C0A1215C8B8700BA5CEB /* Color.swift */,
+				BABF543C21A53B3F0088481D /* UIButton.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -233,6 +252,7 @@
 		BACE0A5121589DF700A9DB4F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BABF543521A44EB20088481D /* Login */,
 				BA15C093215C848B00BA5CEB /* Note */,
 				BA15C094215C848C00BA5CEB /* Subscribe */,
 				BA6303EC215B754D009B93E8 /* Home */,
@@ -381,6 +401,7 @@
 				BA15C098215C849B00BA5CEB /* NoteViewController.xib in Resources */,
 				BA15C0A7215CC45400BA5CEB /* SelectThemeColorViewController.xib in Resources */,
 				BA6303F8215B7BE0009B93E8 /* Strings_TC.plist in Resources */,
+				BABF543921A44EC30088481D /* LoginViewController.xib in Resources */,
 				BA15C0AC215CC4A100BA5CEB /* SelectThemeColorTableViewCell.xib in Resources */,
 				BA6303FA215B7BEA009B93E8 /* Strings_SC.plist in Resources */,
 				BA6303F6215B7BD3009B93E8 /* Strings_EN.plist in Resources */,
@@ -437,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BABF543821A44EC30088481D /* LoginViewController.swift in Sources */,
 				BA630400215B7DA8009B93E8 /* GlobalConst.swift in Sources */,
 				BAACF7F12158CCF400530793 /* NetworkManager.swift in Sources */,
 				BA6303FC215B7C60009B93E8 /* StringUtility.swift in Sources */,
@@ -451,7 +473,9 @@
 				BAD35BB5215E2F8D006BC7B3 /* SearchViewController.swift in Sources */,
 				BA6303EA215B72D1009B93E8 /* TabBarController.swift in Sources */,
 				BA15C0A2215C8B8700BA5CEB /* Color.swift in Sources */,
+				BABF543D21A53B3F0088481D /* UIButton.swift in Sources */,
 				BA15C09B215C84AF00BA5CEB /* SubscribeViewController.swift in Sources */,
+				BABF543B21A52AD60088481D /* LoginManager.swift in Sources */,
 				BACE0A3C215897AF00A9DB4F /* AppDelegate.swift in Sources */,
 				BA6303EF215B7561009B93E8 /* HomeViewController.swift in Sources */,
 			);

@@ -35,6 +35,8 @@ class TabBarController: UITabBarController {
         vcList.append(meViewController)
         
         self.viewControllers = vcList
+        
+        self.selectedIndex = 1
     }
     
     func setupObserver() {

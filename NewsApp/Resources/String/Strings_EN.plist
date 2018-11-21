@@ -26,5 +26,7 @@
 	<string>Note</string>
 	<key>Search</key>
 	<string>Search</string>
+	<key>Welcome</key>
+	<string>Welcome to KNews APP</string>
 </dict>
 </plist>
