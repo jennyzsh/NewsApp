@@ -18,7 +18,9 @@ class SubscribeViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.present(LoginViewController(), animated: true, completion: nil)
+//        if LoginManager.userID == -1 {
+            self.present(LoginViewController(), animated: true, completion: nil)
+//        }
 
     }
     

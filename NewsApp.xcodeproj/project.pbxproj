@@ -35,6 +35,8 @@
 		BABF543921A44EC30088481D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABF543721A44EC30088481D /* LoginViewController.xib */; };
 		BABF543B21A52AD60088481D /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543A21A52AD60088481D /* LoginManager.swift */; };
 		BABF543D21A53B3F0088481D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543C21A53B3F0088481D /* UIButton.swift */; };
+		BABF544121A58F7C0088481D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543F21A58F7C0088481D /* RegisterViewController.swift */; };
+		BABF544221A58F7C0088481D /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABF544021A58F7C0088481D /* RegisterViewController.xib */; };
 		BACE0A3C215897AF00A9DB4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE0A3B215897AF00A9DB4F /* AppDelegate.swift */; };
 		BACE0A3E215897AF00A9DB4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE0A3D215897AF00A9DB4F /* ViewController.swift */; };
 		BACE0A43215897AF00A9DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BACE0A42215897AF00A9DB4F /* Assets.xcassets */; };
@@ -74,6 +76,8 @@
 		BABF543721A44EC30088481D /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BABF543A21A52AD60088481D /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		BABF543C21A53B3F0088481D /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		BABF543F21A58F7C0088481D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		BABF544021A58F7C0088481D /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		BACE0A38215897AF00A9DB4F /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACE0A3B215897AF00A9DB4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BACE0A3D215897AF00A9DB4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +185,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		BABF543E21A58F6C0088481D /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				BABF543F21A58F7C0088481D /* RegisterViewController.swift */,
+				BABF544021A58F7C0088481D /* RegisterViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		BACE0A2F215897AF00A9DB4F = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +265,7 @@
 		BACE0A5121589DF700A9DB4F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BABF543E21A58F6C0088481D /* Register */,
 				BABF543521A44EB20088481D /* Login */,
 				BA15C093215C848B00BA5CEB /* Note */,
 				BA15C094215C848C00BA5CEB /* Subscribe */,
@@ -401,6 +415,7 @@
 				BA15C098215C849B00BA5CEB /* NoteViewController.xib in Resources */,
 				BA15C0A7215CC45400BA5CEB /* SelectThemeColorViewController.xib in Resources */,
 				BA6303F8215B7BE0009B93E8 /* Strings_TC.plist in Resources */,
+				BABF544221A58F7C0088481D /* RegisterViewController.xib in Resources */,
 				BABF543921A44EC30088481D /* LoginViewController.xib in Resources */,
 				BA15C0AC215CC4A100BA5CEB /* SelectThemeColorTableViewCell.xib in Resources */,
 				BA6303FA215B7BEA009B93E8 /* Strings_SC.plist in Resources */,
@@ -467,6 +482,7 @@
 				BA21DC8D216363C400C97766 /* BadgeManager.swift in Sources */,
 				BA6303F3215B756E009B93E8 /* MeViewController.swift in Sources */,
 				BA15C0A8215CC45400BA5CEB /* SelectThemeColorViewController.swift in Sources */,
+				BABF544121A58F7C0088481D /* RegisterViewController.swift in Sources */,
 				BAACF7F32158E27500530793 /* BaseViewController.swift in Sources */,
 				BA15C0AB215CC4A100BA5CEB /* SelectThemeColorTableViewCell.swift in Sources */,
 				BACE0A3E215897AF00A9DB4F /* ViewController.swift in Sources */,

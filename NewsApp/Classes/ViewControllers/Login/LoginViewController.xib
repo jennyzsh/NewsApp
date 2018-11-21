@@ -12,6 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="NewsApp" customModuleProvider="target">
             <connections>
+                <outlet property="btnLogin" destination="XUf-BC-3j6" id="bB4-Dl-xYm"/>
+                <outlet property="btnRegister" destination="Ut3-zY-97k" id="ixl-ev-DGX"/>
+                <outlet property="lblLoginError" destination="kJI-J9-V34" id="4vt-4Z-Cdm"/>
+                <outlet property="lblWelcome" destination="mT9-PD-hKa" id="2SH-XQ-Ikr"/>
                 <outlet property="tfAccountName" destination="d3O-eH-Mr8" id="o5W-O6-gfx"/>
                 <outlet property="tfPassword" destination="f0C-KR-uDR" id="fcK-8L-qvH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -81,7 +85,7 @@
                 </textField>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUf-BC-3j6">
                     <rect key="frame" x="40" y="360" width="295" height="42"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.61176470589999998" green="0.1529411765" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                     <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                     <state key="normal" title="Button"/>
                     <userDefinedRuntimeAttributes>
@@ -89,14 +93,30 @@
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="value" red="0.61176470589999998" green="0.1529411765" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="15"/>
+                            <real key="value" value="20"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="didPressBtnLogin:" destination="-1" eventType="touchUpInside" id="1ZP-sd-wNF"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJI-J9-V34">
+                    <rect key="frame" x="40" y="412" width="295" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ut3-zY-97k">
+                    <rect key="frame" x="164.5" y="458" width="46" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" red="0.22352941179999999" green="0.28627450980000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="didPressBtnRegister:" destination="-1" eventType="touchUpInside" id="2Pd-SX-xvU"/>
                     </connections>
                 </button>
             </subviews>
@@ -109,11 +129,16 @@
                 <constraint firstItem="Ya5-ns-reK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="911-Jc-zJT"/>
                 <constraint firstItem="d3O-eH-Mr8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="AE6-W4-F4M"/>
                 <constraint firstItem="XUf-BC-3j6" firstAttribute="leading" secondItem="f0C-KR-uDR" secondAttribute="leading" id="FMf-F7-uGO"/>
+                <constraint firstItem="Ut3-zY-97k" firstAttribute="top" secondItem="kJI-J9-V34" secondAttribute="bottom" constant="30" id="FVS-Bp-2HG"/>
                 <constraint firstItem="d3O-eH-Mr8" firstAttribute="top" secondItem="Ya5-ns-reK" secondAttribute="bottom" constant="20" id="M7q-Xz-O2g"/>
+                <constraint firstItem="Ut3-zY-97k" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="OJt-kk-7YH"/>
                 <constraint firstItem="Ya5-ns-reK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eQ9-Rd-cUR"/>
                 <constraint firstItem="f0C-KR-uDR" firstAttribute="trailing" secondItem="d3O-eH-Mr8" secondAttribute="trailing" id="go2-dz-GYM"/>
+                <constraint firstItem="kJI-J9-V34" firstAttribute="leading" secondItem="XUf-BC-3j6" secondAttribute="leading" id="gwk-5h-uaV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="d3O-eH-Mr8" secondAttribute="trailing" constant="40" id="nO4-8r-OgK"/>
+                <constraint firstItem="kJI-J9-V34" firstAttribute="trailing" secondItem="XUf-BC-3j6" secondAttribute="trailing" id="tRD-0W-J0G"/>
                 <constraint firstItem="XUf-BC-3j6" firstAttribute="trailing" secondItem="f0C-KR-uDR" secondAttribute="trailing" id="xhj-jS-IZE"/>
+                <constraint firstItem="kJI-J9-V34" firstAttribute="top" secondItem="XUf-BC-3j6" secondAttribute="bottom" constant="10" id="xmZ-Dd-zi8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

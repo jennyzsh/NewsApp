@@ -28,5 +28,15 @@
 	<string>搜索</string>
 	<key>Welcome</key>
 	<string>歡迎使用KNews APP</string>
+	<key>Login</key>
+	<string>登錄</string>
+	<key>Register</key>
+	<string>註冊</string>
+	<key>LoginError</key>
+	<string>賬號或密碼錯誤</string>
+	<key>RegisterError</key>
+	<string>用戶名已存在</string>
+	<key>RegisterNow</key>
+	<string>沒有賬號? Register Now!</string>
 </dict>
 </plist>

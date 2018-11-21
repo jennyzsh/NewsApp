@@ -1,31 +1,26 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  NewsApp
 //
-//  Created by Jenny ZHANG on 2018/11/20.
+//  Created by Jenny ZHANG on 2018/11/21.
 //  Copyright © 2018年 Jenny ZHANG. All rights reserved.
 //
 
 import UIKit
-import Alamofire
 
-class LoginViewController: UIViewController {
-
+class RegisterViewController: UIViewController {
+    
     @IBOutlet weak var lblWelcome: UILabel!
-    @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var tfAccountName: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
-    @IBOutlet weak var lblLoginError: UILabel!
     @IBOutlet weak var btnRegister: UIButton!
+    @IBOutlet weak var lblRegisterError: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupLayout()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.tfAccountName.text = LoginManager.username
+
     }
     
     func setupLayout() {
@@ -44,37 +39,34 @@ class LoginViewController: UIViewController {
         self.tfPassword.placeholder = "Password"
         
         self.lblWelcome.text = StringUtility.getStringOf(keyName: "Welcome")
-        self.btnLogin.setTitle(StringUtility.getStringOf(keyName: "Login"), for: .normal)
-        self.btnRegister.setTitle(StringUtility.getStringOf(keyName: "RegisterNow"), for: .normal)
+        self.btnRegister.setTitle(StringUtility.getStringOf(keyName: "Login"), for: .normal)
+        self.btnRegister.setTitle(StringUtility.getStringOf(keyName: "Register"), for: .normal)
         
-        self.lblLoginError.text = StringUtility.getStringOf(keyName: "LoginError")
-        self.lblLoginError.isHidden = true
+        self.lblRegisterError.text = StringUtility.getStringOf(keyName: "RegisterError")
+        self.lblRegisterError.isHidden = true
     }
 
-    @IBAction func didPressBtnLogin(_ sender: UIButton) {
+    @IBAction func didPressBtnBack(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func didPressBtnRegister(_ sender: UIButton) {
         var params: [String: Any] = [:]
         params["username"] = self.tfAccountName.text! as Any
         params["password"] = self.tfPassword.text! as Any
-        params["uuid"] = LoginManager.uuid as Any
-
-        NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/login", parameters: params) { (json) in
+        
+        NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/logon", parameters: params) { (json) in
             
             if json["returnCode"] as! Int == 0 {
-                self.lblLoginError.isHidden = false
+                self.lblRegisterError.isHidden = false
             } else {
-                self.lblLoginError.isHidden = true
                 LoginManager.username = self.tfAccountName.text!
                 LoginManager.password = self.tfPassword.text!
-                LoginManager.userID = Int(json["userID"] as! String)!
-                print("UserID is \(LoginManager.userID)")
+                self.lblRegisterError.isHidden = true
+                print("Register Success")
                 self.dismiss(animated: true, completion: nil)
             }
         }
-        
-    }
-        
-    @IBAction func didPressBtnRegister(_ sender: UIButton) {
-        self.present(RegisterViewController(), animated: true, completion: nil)
     }
     
 }

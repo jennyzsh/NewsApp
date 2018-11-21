@@ -28,5 +28,15 @@
 	<string>Search</string>
 	<key>Welcome</key>
 	<string>Welcome to KNews APP</string>
+	<key>Login</key>
+	<string>Login</string>
+	<key>Register</key>
+	<string>Register</string>
+	<key>LoginError</key>
+	<string>Name or password is incorrect</string>
+	<key>RegisterError</key>
+	<string>Name already exists</string>
+	<key>RegisterNow</key>
+	<string>New to KNews? Register Now!</string>
 </dict>
 </plist>
