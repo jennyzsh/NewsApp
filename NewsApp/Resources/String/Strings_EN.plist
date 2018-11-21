@@ -38,5 +38,7 @@
 	<string>Name already exists</string>
 	<key>RegisterNow</key>
 	<string>New to KNews? Register Now!</string>
+	<key>Refresh</key>
+	<string>Pull to refresh</string>
 </dict>
 </plist>

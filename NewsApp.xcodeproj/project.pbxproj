@@ -37,6 +37,8 @@
 		BABF543D21A53B3F0088481D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543C21A53B3F0088481D /* UIButton.swift */; };
 		BABF544121A58F7C0088481D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543F21A58F7C0088481D /* RegisterViewController.swift */; };
 		BABF544221A58F7C0088481D /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABF544021A58F7C0088481D /* RegisterViewController.xib */; };
+		BABF544521A59EF10088481D /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF544321A59EF10088481D /* SubscribeTableViewCell.swift */; };
+		BABF544621A59EF10088481D /* SubscribeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABF544421A59EF10088481D /* SubscribeTableViewCell.xib */; };
 		BACE0A3C215897AF00A9DB4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE0A3B215897AF00A9DB4F /* AppDelegate.swift */; };
 		BACE0A3E215897AF00A9DB4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACE0A3D215897AF00A9DB4F /* ViewController.swift */; };
 		BACE0A43215897AF00A9DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BACE0A42215897AF00A9DB4F /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 		BABF543C21A53B3F0088481D /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		BABF543F21A58F7C0088481D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BABF544021A58F7C0088481D /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		BABF544321A59EF10088481D /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
+		BABF544421A59EF10088481D /* SubscribeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeTableViewCell.xib; sourceTree = "<group>"; };
 		BACE0A38215897AF00A9DB4F /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACE0A3B215897AF00A9DB4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BACE0A3D215897AF00A9DB4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			children = (
 				BA15C099215C84AF00BA5CEB /* SubscribeViewController.swift */,
 				BA15C09A215C84AF00BA5CEB /* SubscribeViewController.xib */,
+				BABF544321A59EF10088481D /* SubscribeTableViewCell.swift */,
+				BABF544421A59EF10088481D /* SubscribeTableViewCell.xib */,
 			);
 			path = Subscribe;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 				BACE0A43215897AF00A9DB4F /* Assets.xcassets in Resources */,
 				BAD35BB6215E2F8D006BC7B3 /* SearchViewController.xib in Resources */,
 				BA6303F4215B756E009B93E8 /* MeViewController.xib in Resources */,
+				BABF544621A59EF10088481D /* SubscribeTableViewCell.xib in Resources */,
 				BA15C09C215C84AF00BA5CEB /* SubscribeViewController.xib in Resources */,
 				BA6303F0215B7561009B93E8 /* HomeViewController.xib in Resources */,
 				BA15C098215C849B00BA5CEB /* NoteViewController.xib in Resources */,
@@ -481,6 +488,7 @@
 				BA6303FE215B7CC6009B93E8 /* LanguageUtility.swift in Sources */,
 				BA21DC8D216363C400C97766 /* BadgeManager.swift in Sources */,
 				BA6303F3215B756E009B93E8 /* MeViewController.swift in Sources */,
+				BABF544521A59EF10088481D /* SubscribeTableViewCell.swift in Sources */,
 				BA15C0A8215CC45400BA5CEB /* SelectThemeColorViewController.swift in Sources */,
 				BABF544121A58F7C0088481D /* RegisterViewController.swift in Sources */,
 				BAACF7F32158E27500530793 /* BaseViewController.swift in Sources */,

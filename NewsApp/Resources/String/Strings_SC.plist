@@ -38,5 +38,7 @@
 	<string>用户名已存在</string>
 	<key>RegisterNow</key>
 	<string>没有账号? Register Now!</string>
+	<key>Refresh</key>
+	<string>下拉更新</string>
 </dict>
 </plist>

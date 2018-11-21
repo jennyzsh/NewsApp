@@ -8,19 +8,34 @@
 
 import UIKit
 
-class SubscribeViewController: BaseViewController {
+class SubscribeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    let cellIdentifier = "SubscribeTableViewCell"
+    var refreshControl = UIRefreshControl()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        
+        refreshControl.addTarget(self, action: #selector(refreshData),
+                                 for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新数据")
+        self.tableView.addSubview(refreshControl)
+//        refreshData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        if LoginManager.userID == -1 {
+        if LoginManager.userID == -1 {
             self.present(LoginViewController(), animated: true, completion: nil)
-//        }
+        }
 
     }
     
@@ -33,6 +48,35 @@ class SubscribeViewController: BaseViewController {
         lblTitle.textAlignment = .center
         lblTitle.font = UIFont.systemFont(ofSize: 18)
         self.setNavigationBarTitleView(lblTitle)
+    }
+    
+    @objc func refreshData() {
+        
+        self.refreshControl.endRefreshing()
+    }
+    
+    //MARK: UITableViewDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    //MARK: UITableViewDataSource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "asdfaf"
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SubscribeTableViewCell
+        
+        return cell
     }
 
 }
