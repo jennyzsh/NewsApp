@@ -40,5 +40,11 @@
 	<string>沒有賬號? Register Now!</string>
 	<key>Refresh</key>
 	<string>下拉更新</string>
+	<key>ViewComment</key>
+	<string>查看評論</string>
+	<key>AddComment</key>
+	<string>添加評論</string>
+	<key>Send</key>
+	<string>發送</string>
 </dict>
 </plist>

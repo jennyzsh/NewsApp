@@ -40,5 +40,11 @@
 	<string>New to KNews? Register Now!</string>
 	<key>Refresh</key>
 	<string>Pull to refresh</string>
+	<key>ViewComment</key>
+	<string>View Comment</string>
+	<key>AddComment</key>
+	<string>Add Comment</string>
+	<key>Send</key>
+	<string>Send</string>
 </dict>
 </plist>

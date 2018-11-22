@@ -40,5 +40,11 @@
 	<string>没有账号? Register Now!</string>
 	<key>Refresh</key>
 	<string>下拉更新</string>
+	<key>ViewComment</key>
+	<string>查看评论</string>
+	<key>AddComment</key>
+	<string>添加评论</string>
+	<key>Send</key>
+	<string>发送</string>
 </dict>
 </plist>
