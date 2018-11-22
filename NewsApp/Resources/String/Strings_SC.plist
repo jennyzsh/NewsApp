@@ -46,5 +46,13 @@
 	<string>添加评论</string>
 	<key>Send</key>
 	<string>发送</string>
+	<key>LikeNum</key>
+	<string>喜欢: %i</string>
+	<key>DislikeNum</key>
+	<string>不喜欢: %i</string>
+	<key>PublisherStmt</key>
+	<string>出版商: %@</string>
+	<key>AuthorStmt</key>
+	<string>作者: %@</string>
 </dict>
 </plist>

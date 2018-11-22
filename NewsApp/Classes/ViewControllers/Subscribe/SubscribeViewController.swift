@@ -14,6 +14,7 @@ class SubscribeViewController: BaseViewController, UITableViewDelegate, UITableV
     
     let cellIdentifier = "SubscribeTableViewCell"
     var refreshControl = UIRefreshControl()
+    var news_contents: Dictionary<String, Any> = Dictionary()
     
     
     
@@ -35,6 +36,8 @@ class SubscribeViewController: BaseViewController, UITableViewDelegate, UITableV
         
         if LoginManager.userID == -1 {
             self.present(LoginViewController(), animated: true, completion: nil)
+        } else {
+            self.retrieveData()
         }
 
     }
@@ -55,36 +58,63 @@ class SubscribeViewController: BaseViewController, UITableViewDelegate, UITableV
         self.refreshControl.endRefreshing()
     }
     
+    func retrieveData() {
+        
+        //get user's subscribed publisher list
+        var params: [String: Any] = [:]
+        params["posttype"] = 0 as Any
+        params["userid"] = 10 as Any
+        NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/subscribe", parameters: params) { (json) in
+            
+            if json["returnCode"] as! Int == 1 {
+                let return_content = json["returnContent"] as! Dictionary<String, Any>
+                let publisher = (return_content["publisher"] as! NSArray) as Array
+                let new_publisher = publisher.map({String(describing: $0)})
+                let publisher_string = new_publisher.joined(separator: " ")
+                
+                /*******get user's subcribed publishers' news********/
+                var news_params: [String: Any] = [:]
+                news_params["posttype"] = 0 as Any
+                news_params["publisher"] = publisher_string as Any
+                
+                NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/news", parameters: news_params, finishedCallback: { (json) in
+                    
+                    if json["returnCode"] as! Int == 1 {
+                        let news_contents = json["returnContent"] as! Dictionary<String, Any>
+                        self.news_contents = news_contents
+                        self.tableView.reloadData()
+                    }
+                })
+                /*******get user's subcribed publishers' news********/
+
+            }
+        }
+    }
+    
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        let controller = AddCommentViewController()
-//        controller.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 400)
-//        controller.willMove(toParentViewController: self)
-//        self.view.addSubview(controller.view)
-//        self.addChildViewController(controller)
-//        controller.didMove(toParentViewController: self)
-        
         self.navigationController?.pushViewController(NewsPageViewController(), animated: true)
-        
     }
     
     //MARK: UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "asdfaf"
+        return self.news_contents.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SubscribeTableViewCell
-        
+        let newsID = Array(self.news_contents.keys)[indexPath.row]
+        let news_dic = self.news_contents[newsID] as! [String:Any]
+        cell.lblTitle.text = news_dic["title"] as! String
+        cell.lblPublisher.text = String(format: StringUtility.getStringOf(keyName: "PublisherStmt"), news_dic["publisher"] as! String)
+        cell.lblAuthor.text =  String(format: StringUtility.getStringOf(keyName: "AuthorStmt"), news_dic["author"] as! String)
+        cell.lblTime.text = news_dic["time"] as! String
+        cell.lblLikeNum.text = String(format: StringUtility.getStringOf(keyName: "LikeNum"), news_dic["like_num"] as! Int)
+        cell.lblDislikeNum.text = String(format: StringUtility.getStringOf(keyName: "DislikeNum"), news_dic["dislike_num"] as! Int)
         return cell
     }
 

@@ -46,5 +46,13 @@
 	<string>Add Comment</string>
 	<key>Send</key>
 	<string>Send</string>
+	<key>LikeNum</key>
+	<string>Like: %i</string>
+	<key>DislikeNum</key>
+	<string>Dislike: %i</string>
+	<key>PublisherStmt</key>
+	<string>Publisher: %@</string>
+	<key>AuthorStmt</key>
+	<string>Author: %@</string>
 </dict>
 </plist>

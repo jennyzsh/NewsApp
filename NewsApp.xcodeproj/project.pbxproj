@@ -34,7 +34,6 @@
 		BABF543821A44EC30088481D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543621A44EC30088481D /* LoginViewController.swift */; };
 		BABF543921A44EC30088481D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABF543721A44EC30088481D /* LoginViewController.xib */; };
 		BABF543B21A52AD60088481D /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543A21A52AD60088481D /* LoginManager.swift */; };
-		BABF543D21A53B3F0088481D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543C21A53B3F0088481D /* UIButton.swift */; };
 		BABF544121A58F7C0088481D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543F21A58F7C0088481D /* RegisterViewController.swift */; };
 		BABF544221A58F7C0088481D /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABF544021A58F7C0088481D /* RegisterViewController.xib */; };
 		BABF544521A59EF10088481D /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF544321A59EF10088481D /* SubscribeTableViewCell.swift */; };
@@ -53,6 +52,8 @@
 		BAE7640C21A677EE00003ECB /* NewsPageTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE7640A21A677EE00003ECB /* NewsPageTextTableViewCell.xib */; };
 		BAE7640F21A677FE00003ECB /* NewsPageImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7640D21A677FE00003ECB /* NewsPageImageTableViewCell.swift */; };
 		BAE7641021A677FE00003ECB /* NewsPageImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE7640E21A677FE00003ECB /* NewsPageImageTableViewCell.xib */; };
+		BAE7641321A6DBCD00003ECB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7641221A6DBCD00003ECB /* String.swift */; };
+		BAE7641521A6DBF700003ECB /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7641421A6DBF700003ECB /* UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,7 +86,6 @@
 		BABF543621A44EC30088481D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BABF543721A44EC30088481D /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BABF543A21A52AD60088481D /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
-		BABF543C21A53B3F0088481D /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		BABF543F21A58F7C0088481D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BABF544021A58F7C0088481D /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		BABF544321A59EF10088481D /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +106,8 @@
 		BAE7640A21A677EE00003ECB /* NewsPageTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsPageTextTableViewCell.xib; sourceTree = "<group>"; };
 		BAE7640D21A677FE00003ECB /* NewsPageImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPageImageTableViewCell.swift; sourceTree = "<group>"; };
 		BAE7640E21A677FE00003ECB /* NewsPageImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsPageImageTableViewCell.xib; sourceTree = "<group>"; };
+		BAE7641221A6DBCD00003ECB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		BAE7641421A6DBF700003ECB /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 		BACE0A4D21589DF700A9DB4F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BAE7641121A6DB7E00003ECB /* extension */,
 				BACE0A4E21589DF700A9DB4F /* CustomUI */,
 				BACE0A4F21589DF700A9DB4F /* DataManager */,
 				BACE0A5021589DF700A9DB4F /* CoreManagersAndDelegates */,
@@ -263,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				BA15C0A1215C8B8700BA5CEB /* Color.swift */,
-				BABF543C21A53B3F0088481D /* UIButton.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -390,6 +392,15 @@
 				BAE7640E21A677FE00003ECB /* NewsPageImageTableViewCell.xib */,
 			);
 			path = NewsPage;
+			sourceTree = "<group>";
+		};
+		BAE7641121A6DB7E00003ECB /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				BAE7641221A6DBCD00003ECB /* String.swift */,
+				BAE7641421A6DBF700003ECB /* UIButton.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,6 +540,7 @@
 				BABF543821A44EC30088481D /* LoginViewController.swift in Sources */,
 				BA630400215B7DA8009B93E8 /* GlobalConst.swift in Sources */,
 				BAACF7F12158CCF400530793 /* NetworkManager.swift in Sources */,
+				BAE7641321A6DBCD00003ECB /* String.swift in Sources */,
 				BA6303FC215B7C60009B93E8 /* StringUtility.swift in Sources */,
 				BA15C097215C849B00BA5CEB /* NoteViewController.swift in Sources */,
 				BAE7640221A673DB00003ECB /* AddCommentViewController.swift in Sources */,
@@ -546,12 +558,12 @@
 				BAE7640721A6763F00003ECB /* NewsPageViewController.swift in Sources */,
 				BA6303EA215B72D1009B93E8 /* TabBarController.swift in Sources */,
 				BA15C0A2215C8B8700BA5CEB /* Color.swift in Sources */,
-				BABF543D21A53B3F0088481D /* UIButton.swift in Sources */,
 				BA15C09B215C84AF00BA5CEB /* SubscribeViewController.swift in Sources */,
 				BABF543B21A52AD60088481D /* LoginManager.swift in Sources */,
 				BACE0A3C215897AF00A9DB4F /* AppDelegate.swift in Sources */,
 				BAE7640F21A677FE00003ECB /* NewsPageImageTableViewCell.swift in Sources */,
 				BA6303EF215B7561009B93E8 /* HomeViewController.swift in Sources */,
+				BAE7641521A6DBF700003ECB /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
