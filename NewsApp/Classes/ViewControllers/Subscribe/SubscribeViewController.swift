@@ -58,6 +58,13 @@ class SubscribeViewController: BaseViewController, UITableViewDelegate, UITableV
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let controller = AddCommentViewController()
+        controller.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 400)
+        controller.willMove(toParentViewController: self)
+        self.view.addSubview(controller.view)
+        self.addChildViewController(controller)
+        controller.didMove(toParentViewController: self)
+        
     }
     
     //MARK: UITableViewDataSource

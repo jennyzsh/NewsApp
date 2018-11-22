@@ -45,6 +45,14 @@
 		BACE0A46215897AF00A9DB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACE0A44215897AF00A9DB4F /* LaunchScreen.storyboard */; };
 		BAD35BB5215E2F8D006BC7B3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD35BB3215E2F8D006BC7B3 /* SearchViewController.swift */; };
 		BAD35BB6215E2F8D006BC7B3 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAD35BB4215E2F8D006BC7B3 /* SearchViewController.xib */; };
+		BAE7640221A673DB00003ECB /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7640021A673DB00003ECB /* AddCommentViewController.swift */; };
+		BAE7640321A673DB00003ECB /* AddCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE7640121A673DB00003ECB /* AddCommentViewController.xib */; };
+		BAE7640721A6763F00003ECB /* NewsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7640521A6763F00003ECB /* NewsPageViewController.swift */; };
+		BAE7640821A6763F00003ECB /* NewsPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE7640621A6763F00003ECB /* NewsPageViewController.xib */; };
+		BAE7640B21A677EE00003ECB /* NewsPageTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7640921A677EE00003ECB /* NewsPageTextTableViewCell.swift */; };
+		BAE7640C21A677EE00003ECB /* NewsPageTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE7640A21A677EE00003ECB /* NewsPageTextTableViewCell.xib */; };
+		BAE7640F21A677FE00003ECB /* NewsPageImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE7640D21A677FE00003ECB /* NewsPageImageTableViewCell.swift */; };
+		BAE7641021A677FE00003ECB /* NewsPageImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE7640E21A677FE00003ECB /* NewsPageImageTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +98,14 @@
 		BACE0A47215897AF00A9DB4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD35BB3215E2F8D006BC7B3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BAD35BB4215E2F8D006BC7B3 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		BAE7640021A673DB00003ECB /* AddCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
+		BAE7640121A673DB00003ECB /* AddCommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCommentViewController.xib; sourceTree = "<group>"; };
+		BAE7640521A6763F00003ECB /* NewsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPageViewController.swift; sourceTree = "<group>"; };
+		BAE7640621A6763F00003ECB /* NewsPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsPageViewController.xib; sourceTree = "<group>"; };
+		BAE7640921A677EE00003ECB /* NewsPageTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPageTextTableViewCell.swift; sourceTree = "<group>"; };
+		BAE7640A21A677EE00003ECB /* NewsPageTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsPageTextTableViewCell.xib; sourceTree = "<group>"; };
+		BAE7640D21A677FE00003ECB /* NewsPageImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPageImageTableViewCell.swift; sourceTree = "<group>"; };
+		BAE7640E21A677FE00003ECB /* NewsPageImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsPageImageTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +287,8 @@
 		BACE0A5121589DF700A9DB4F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BAE7640421A6763100003ECB /* NewsPage */,
+				BAE763FF21A673C900003ECB /* Comment */,
 				BABF543E21A58F6C0088481D /* Register */,
 				BABF543521A44EB20088481D /* Login */,
 				BA15C093215C848B00BA5CEB /* Note */,
@@ -352,6 +370,28 @@
 			path = SearchBar;
 			sourceTree = "<group>";
 		};
+		BAE763FF21A673C900003ECB /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				BAE7640021A673DB00003ECB /* AddCommentViewController.swift */,
+				BAE7640121A673DB00003ECB /* AddCommentViewController.xib */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		BAE7640421A6763100003ECB /* NewsPage */ = {
+			isa = PBXGroup;
+			children = (
+				BAE7640521A6763F00003ECB /* NewsPageViewController.swift */,
+				BAE7640621A6763F00003ECB /* NewsPageViewController.xib */,
+				BAE7640921A677EE00003ECB /* NewsPageTextTableViewCell.swift */,
+				BAE7640A21A677EE00003ECB /* NewsPageTextTableViewCell.xib */,
+				BAE7640D21A677FE00003ECB /* NewsPageImageTableViewCell.swift */,
+				BAE7640E21A677FE00003ECB /* NewsPageImageTableViewCell.xib */,
+			);
+			path = NewsPage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -415,17 +455,21 @@
 				BACE0A46215897AF00A9DB4F /* LaunchScreen.storyboard in Resources */,
 				BACE0A43215897AF00A9DB4F /* Assets.xcassets in Resources */,
 				BAD35BB6215E2F8D006BC7B3 /* SearchViewController.xib in Resources */,
+				BAE7640821A6763F00003ECB /* NewsPageViewController.xib in Resources */,
 				BA6303F4215B756E009B93E8 /* MeViewController.xib in Resources */,
 				BABF544621A59EF10088481D /* SubscribeTableViewCell.xib in Resources */,
 				BA15C09C215C84AF00BA5CEB /* SubscribeViewController.xib in Resources */,
 				BA6303F0215B7561009B93E8 /* HomeViewController.xib in Resources */,
+				BAE7641021A677FE00003ECB /* NewsPageImageTableViewCell.xib in Resources */,
 				BA15C098215C849B00BA5CEB /* NoteViewController.xib in Resources */,
+				BAE7640321A673DB00003ECB /* AddCommentViewController.xib in Resources */,
 				BA15C0A7215CC45400BA5CEB /* SelectThemeColorViewController.xib in Resources */,
 				BA6303F8215B7BE0009B93E8 /* Strings_TC.plist in Resources */,
 				BABF544221A58F7C0088481D /* RegisterViewController.xib in Resources */,
 				BABF543921A44EC30088481D /* LoginViewController.xib in Resources */,
 				BA15C0AC215CC4A100BA5CEB /* SelectThemeColorTableViewCell.xib in Resources */,
 				BA6303FA215B7BEA009B93E8 /* Strings_SC.plist in Resources */,
+				BAE7640C21A677EE00003ECB /* NewsPageTextTableViewCell.xib in Resources */,
 				BA6303F6215B7BD3009B93E8 /* Strings_EN.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +529,7 @@
 				BAACF7F12158CCF400530793 /* NetworkManager.swift in Sources */,
 				BA6303FC215B7C60009B93E8 /* StringUtility.swift in Sources */,
 				BA15C097215C849B00BA5CEB /* NoteViewController.swift in Sources */,
+				BAE7640221A673DB00003ECB /* AddCommentViewController.swift in Sources */,
 				BA6303FE215B7CC6009B93E8 /* LanguageUtility.swift in Sources */,
 				BA21DC8D216363C400C97766 /* BadgeManager.swift in Sources */,
 				BA6303F3215B756E009B93E8 /* MeViewController.swift in Sources */,
@@ -492,15 +537,18 @@
 				BA15C0A8215CC45400BA5CEB /* SelectThemeColorViewController.swift in Sources */,
 				BABF544121A58F7C0088481D /* RegisterViewController.swift in Sources */,
 				BAACF7F32158E27500530793 /* BaseViewController.swift in Sources */,
+				BAE7640B21A677EE00003ECB /* NewsPageTextTableViewCell.swift in Sources */,
 				BA15C0AB215CC4A100BA5CEB /* SelectThemeColorTableViewCell.swift in Sources */,
 				BACE0A3E215897AF00A9DB4F /* ViewController.swift in Sources */,
 				BAD35BB5215E2F8D006BC7B3 /* SearchViewController.swift in Sources */,
+				BAE7640721A6763F00003ECB /* NewsPageViewController.swift in Sources */,
 				BA6303EA215B72D1009B93E8 /* TabBarController.swift in Sources */,
 				BA15C0A2215C8B8700BA5CEB /* Color.swift in Sources */,
 				BABF543D21A53B3F0088481D /* UIButton.swift in Sources */,
 				BA15C09B215C84AF00BA5CEB /* SubscribeViewController.swift in Sources */,
 				BABF543B21A52AD60088481D /* LoginManager.swift in Sources */,
 				BACE0A3C215897AF00A9DB4F /* AppDelegate.swift in Sources */,
+				BAE7640F21A677FE00003ECB /* NewsPageImageTableViewCell.swift in Sources */,
 				BA6303EF215B7561009B93E8 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
