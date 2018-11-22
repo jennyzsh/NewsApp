@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubscribeTableViewCell: UITableViewCell {
+class NewsMenuTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblPublisher: UILabel!

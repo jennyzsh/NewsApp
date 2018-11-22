@@ -12,7 +12,7 @@ class SubscribeViewController: BaseViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var tableView: UITableView!
     
-    let cellIdentifier = "SubscribeTableViewCell"
+    let cellIdentifier = "NewsMenuTableViewCell"
     var refreshControl = UIRefreshControl()
     var news_contents: Dictionary<String, Any> = Dictionary()
     
@@ -93,7 +93,12 @@ class SubscribeViewController: BaseViewController, UITableViewDelegate, UITableV
     
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(NewsPageViewController(), animated: true)
+        let newsID = Array(self.news_contents.keys)[indexPath.row]
+        let news_dic = self.news_contents[newsID] as! [String: Any]
+        let newsPageVC = NewsPageViewController()
+        newsPageVC.newsID = newsID
+        newsPageVC.news_dic = news_dic
+        self.navigationController?.pushViewController(newsPageVC, animated: true)
     }
     
     //MARK: UITableViewDataSource
@@ -106,7 +111,7 @@ class SubscribeViewController: BaseViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SubscribeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NewsMenuTableViewCell
         let newsID = Array(self.news_contents.keys)[indexPath.row]
         let news_dic = self.news_contents[newsID] as! [String:Any]
         cell.lblTitle.text = news_dic["title"] as! String
