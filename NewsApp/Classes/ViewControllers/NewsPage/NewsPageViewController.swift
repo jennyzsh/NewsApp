@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsPageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
+class NewsPageViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btn1: UIButton!
@@ -30,6 +30,26 @@ class NewsPageViewController: UIViewController, UITableViewDataSource, UITableVi
         
         self.tableView.register(UINib(nibName: textCellIdentifier, bundle: nil), forCellReuseIdentifier: textCellIdentifier)
         self.tableView.register(UINib(nibName: imageCellIdentifier, bundle: nil), forCellReuseIdentifier: imageCellIdentifier)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        resetContent()
+    }
+    
+    override func resetContent() {
+        let lblTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
+        lblTitle.sizeToFit()
+        lblTitle.text =  "News Page"
+        lblTitle.textAlignment = .center
+        lblTitle.font = UIFont.systemFont(ofSize: 18)
+        self.setNavigationBarTitleView(lblTitle)
+        
+        let back = UIBarButtonItem(title: "<-", style: .plain, target: self, action: #selector(backToPrevious))
+        back.tintColor = Color.White
+        self.setNavigationBarLeftButtonItem(back)
     }
     
     func setupLayout() {
@@ -48,6 +68,10 @@ class NewsPageViewController: UIViewController, UITableViewDataSource, UITableVi
     @objc func dismissCommentView() {
         self.view.endEditing(true)
         self.vAddComment.isHidden = true
+    }
+    
+    @objc func backToPrevious() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     //MARK: UITextViewDelegate
