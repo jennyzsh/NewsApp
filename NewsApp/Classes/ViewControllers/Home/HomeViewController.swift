@@ -22,6 +22,7 @@ class HomeViewController: BaseViewController, UISearchBarDelegate, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchBar.delegate = self
+        self.searchBar.placeholder = "Search Now"
         
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
@@ -32,7 +33,7 @@ class HomeViewController: BaseViewController, UISearchBarDelegate, UITableViewDe
         self.tableView.addSubview(refreshControl)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.retrieveData()
     }
@@ -68,10 +69,6 @@ class HomeViewController: BaseViewController, UISearchBarDelegate, UITableViewDe
             }
         })
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
