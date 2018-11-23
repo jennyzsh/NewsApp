@@ -120,6 +120,12 @@ class SubscribeViewController: BaseViewController, UITableViewDelegate, UITableV
         cell.lblTime.text = news_dic["time"] as! String
         cell.lblLikeNum.text = String(format: StringUtility.getStringOf(keyName: "LikeNum"), news_dic["like_num"] as! Int)
         cell.lblDislikeNum.text = String(format: StringUtility.getStringOf(keyName: "DislikeNum"), news_dic["dislike_num"] as! Int)
+        if news_dic["thumbnail"] != nil {
+            cell.setImageContent(with: news_dic["thumbnail"] as! String)
+            cell.ivThumbnailConstraintW.constant = 150
+        } else {
+            cell.ivThumbnailConstraintW.constant = 0
+        }
         return cell
     }
 

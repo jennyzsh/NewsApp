@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class NewsMenuTableViewCell: UITableViewCell {
 
@@ -16,10 +17,27 @@ class NewsMenuTableViewCell: UITableViewCell {
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblLikeNum: UILabel!
     @IBOutlet weak var lblDislikeNum: UILabel!
+    @IBOutlet weak var ivThumbnail: UIImageView!
+    @IBOutlet weak var ivThumbnailConstraintW: NSLayoutConstraint!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func setImageContent(with fileUrl:String?)
+    {
+        print(fileUrl ?? "No fileUrl")
+        
+        guard let fileURL = fileUrl,
+            let url = URL(string: fileURL) else {
+                return
+        }
+        
+        self.ivThumbnail.af_setImage(withURL: url, completion:{ dataResponse in
+            
+            self.ivThumbnail.image = dataResponse.result.value
+        })
     }
 
 }
