@@ -18,7 +18,7 @@ enum MethodType {
 class NetworkManager: NSObject {
     static let instance = NetworkManager()
     
-    func requestData(_ type : MethodType, URLString : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : Dictionary<String, Any>) -> ()) {
+    func requestData(_ type : MethodType, URLString : String, parameters : [String : Any]? = nil, finishedCallback :  @escaping (_ result : JSON) -> ()) {
         
         // 1.获取类型
         let method = type == .GET ? HTTPMethod.get : HTTPMethod.post
@@ -33,7 +33,9 @@ class NetworkManager: NSObject {
             }
 
             // 4.将结果回调出去
-            finishedCallback(result as! Dictionary<String, Any>)
+            let json = JSON(response.result.value)
+            finishedCallback(json)
+            
         }
 
     }
