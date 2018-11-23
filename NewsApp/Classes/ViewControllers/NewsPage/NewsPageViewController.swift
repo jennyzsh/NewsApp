@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class NewsPageViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
     
@@ -18,9 +19,8 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tvComment: UITextView!
     @IBOutlet weak var btnAddComment: UIButton!
     
-    var newsID = ""
-    var news_dic: [String:Any] = [:]
-    var content_array = [AnyObject]()
+    var news_dic: JSON!
+    var content_array: JSON!
     
     
     let headerHeight = CGFloat(150)
@@ -31,7 +31,7 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.content_array = (self.news_dic["content"] as! NSArray) as Array
+        self.content_array = self.news_dic["content"]
         self.setupLayout()
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
         
@@ -114,23 +114,23 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.content_array[indexPath.row]["type"] as! String == "text" {
+        if self.content_array[indexPath.row]["type"].stringValue == "text" {
             let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as! NewsPageTextTableViewCell
-            cell.lblContent.text = self.content_array[indexPath.row]["content"] as! String
+            cell.lblContent.text = self.content_array[indexPath.row]["content"].stringValue
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: imageCellIdentifier, for: indexPath) as! NewsPageImageTableViewCell
-            cell.setImageContent(with: self.content_array[indexPath.row]["content"] as! String)
+            cell.setImageContent(with: self.content_array[indexPath.row]["content"].stringValue)
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: newsHeaderCellIdentifier) as! NewsPageTableHeaderView
-        header.lblTitle.text = self.news_dic["title"] as! String
-        header.lblPublisher.text = String(format: StringUtility.getStringOf(keyName: "PublisherStmt"), self.news_dic["publisher"] as! String)
-        header.lblAuthor.text = String(format: StringUtility.getStringOf(keyName: "AuthorStmt"), self.news_dic["author"] as! String)
-        header.lblTime.text = self.news_dic["time"] as! String
+        header.lblTitle.text = self.news_dic["title"].stringValue
+        header.lblPublisher.text = String(format: StringUtility.getStringOf(keyName: "PublisherStmt"), self.news_dic["publisher"].stringValue)
+        header.lblAuthor.text = String(format: StringUtility.getStringOf(keyName: "AuthorStmt"), self.news_dic["author"].stringValue)
+        header.lblTime.text = self.news_dic["time"].stringValue
         return header
     }
     

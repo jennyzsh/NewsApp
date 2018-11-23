@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class HomeViewController: BaseViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
@@ -15,7 +16,7 @@ class HomeViewController: BaseViewController, UISearchBarDelegate, UITableViewDe
     
     let cellIdentifier = "NewsMenuTableViewCell"
     var refreshControl = UIRefreshControl()
-    var news_contents: Dictionary<String, Any> = Dictionary()
+    var news_contents: [JSON] = []
     
     
     
@@ -62,8 +63,8 @@ class HomeViewController: BaseViewController, UISearchBarDelegate, UITableViewDe
         
         NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/news", parameters: news_params, finishedCallback: { (json) in
             
-            if json["returnCode"] as! Int == 1 {
-                let news_contents = json["returnContent"] as! Dictionary<String, Any>
+            if json["returnCode"].intValue == 1 {
+                let news_contents = json["returnContent"].arrayValue
                 self.news_contents = news_contents
                 self.tableView.reloadData()
             }
@@ -78,10 +79,9 @@ class HomeViewController: BaseViewController, UISearchBarDelegate, UITableViewDe
     
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let newsID = Array(self.news_contents.keys)[indexPath.row]
-        let news_dic = self.news_contents[newsID] as! [String: Any]
+        let newsID = self.news_contents[indexPath.row]["newsID"].intValue
+        let news_dic = self.news_contents[indexPath.row]
         let newsPageVC = NewsPageViewController()
-        newsPageVC.newsID = newsID
         newsPageVC.news_dic = news_dic
         self.navigationController?.pushViewController(newsPageVC, animated: true)
     }
@@ -97,16 +97,15 @@ class HomeViewController: BaseViewController, UISearchBarDelegate, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NewsMenuTableViewCell
-        let newsID = Array(self.news_contents.keys)[indexPath.row]
-        let news_dic = self.news_contents[newsID] as! [String:Any]
-        cell.lblTitle.text = news_dic["title"] as! String
-        cell.lblPublisher.text = String(format: StringUtility.getStringOf(keyName: "PublisherStmt"), news_dic["publisher"] as! String)
-        cell.lblAuthor.text =  String(format: StringUtility.getStringOf(keyName: "AuthorStmt"), news_dic["author"] as! String)
-        cell.lblTime.text = news_dic["time"] as! String
-        cell.lblLikeNum.text = String(format: StringUtility.getStringOf(keyName: "LikeNum"), news_dic["like_num"] as! Int)
-        cell.lblDislikeNum.text = String(format: StringUtility.getStringOf(keyName: "DislikeNum"), news_dic["dislike_num"] as! Int)
-        if news_dic["thumbnail"] != nil {
-            cell.setImageContent(with: news_dic["thumbnail"] as! String)
+        let newsID = self.news_contents[indexPath.row]["newsID"].intValue
+        cell.lblTitle.text = self.news_contents[indexPath.row]["title"].stringValue
+        cell.lblPublisher.text = String(format: StringUtility.getStringOf(keyName: "PublisherStmt"), self.news_contents[indexPath.row]["publisher"].stringValue)
+        cell.lblAuthor.text =  String(format: StringUtility.getStringOf(keyName: "AuthorStmt"), self.news_contents[indexPath.row]["author"].stringValue)
+        cell.lblTime.text = self.news_contents[indexPath.row]["time"].stringValue
+        cell.lblLikeNum.text = String(format: StringUtility.getStringOf(keyName: "LikeNum"), self.news_contents[indexPath.row]["like_num"].intValue)
+        cell.lblDislikeNum.text = String(format: StringUtility.getStringOf(keyName: "DislikeNum"), self.news_contents[indexPath.row]["dislike_num"].intValue)
+        if self.news_contents[indexPath.row]["thumbnail"] != nil {
+            cell.setImageContent(with: self.news_contents[indexPath.row]["thumbnail"].stringValue)
             cell.ivThumbnailConstraintW.constant = 150
         } else {
             cell.ivThumbnailConstraintW.constant = 0
