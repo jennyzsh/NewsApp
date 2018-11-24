@@ -16,6 +16,10 @@
 		BA131C7D21A98A0F007A5A6D /* SetSubscribedPublisherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA131C7B21A98A0F007A5A6D /* SetSubscribedPublisherViewController.xib */; };
 		BA131C8021A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA131C7E21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.swift */; };
 		BA131C8121A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA131C7F21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.xib */; };
+		BA131C8421A9B961007A5A6D /* ViewCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA131C8221A9B961007A5A6D /* ViewCommentViewController.swift */; };
+		BA131C8521A9B961007A5A6D /* ViewCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA131C8321A9B961007A5A6D /* ViewCommentViewController.xib */; };
+		BA131C8821A9BA26007A5A6D /* ViewCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA131C8621A9BA26007A5A6D /* ViewCommentTableViewCell.swift */; };
+		BA131C8921A9BA26007A5A6D /* ViewCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA131C8721A9BA26007A5A6D /* ViewCommentTableViewCell.xib */; };
 		BA15C097215C849B00BA5CEB /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15C095215C849B00BA5CEB /* NoteViewController.swift */; };
 		BA15C098215C849B00BA5CEB /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA15C096215C849B00BA5CEB /* NoteViewController.xib */; };
 		BA15C09B215C84AF00BA5CEB /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15C099215C84AF00BA5CEB /* SubscribeViewController.swift */; };
@@ -78,6 +82,10 @@
 		BA131C7B21A98A0F007A5A6D /* SetSubscribedPublisherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetSubscribedPublisherViewController.xib; sourceTree = "<group>"; };
 		BA131C7E21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSubscribedPublisherTableViewCell.swift; sourceTree = "<group>"; };
 		BA131C7F21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetSubscribedPublisherTableViewCell.xib; sourceTree = "<group>"; };
+		BA131C8221A9B961007A5A6D /* ViewCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCommentViewController.swift; sourceTree = "<group>"; };
+		BA131C8321A9B961007A5A6D /* ViewCommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewCommentViewController.xib; sourceTree = "<group>"; };
+		BA131C8621A9BA26007A5A6D /* ViewCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCommentTableViewCell.swift; sourceTree = "<group>"; };
+		BA131C8721A9BA26007A5A6D /* ViewCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewCommentTableViewCell.xib; sourceTree = "<group>"; };
 		BA15C095215C849B00BA5CEB /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		BA15C096215C849B00BA5CEB /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
 		BA15C099215C84AF00BA5CEB /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
@@ -400,6 +408,8 @@
 			children = (
 				BAE7640021A673DB00003ECB /* AddCommentViewController.swift */,
 				BAE7640121A673DB00003ECB /* AddCommentViewController.xib */,
+				BA131C8221A9B961007A5A6D /* ViewCommentViewController.swift */,
+				BA131C8321A9B961007A5A6D /* ViewCommentViewController.xib */,
 			);
 			path = Comment;
 			sourceTree = "<group>";
@@ -437,6 +447,8 @@
 				BA131C7221A98316007A5A6D /* MeTableViewCell.xib */,
 				BA131C7E21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.swift */,
 				BA131C7F21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.xib */,
+				BA131C8621A9BA26007A5A6D /* ViewCommentTableViewCell.swift */,
+				BA131C8721A9BA26007A5A6D /* ViewCommentTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -505,6 +517,7 @@
 				BACE0A43215897AF00A9DB4F /* Assets.xcassets in Resources */,
 				BAD35BB6215E2F8D006BC7B3 /* SearchViewController.xib in Resources */,
 				BAE7642621A6F4DE00003ECB /* NewsPageImageTableViewCell.xib in Resources */,
+				BA131C8921A9BA26007A5A6D /* ViewCommentTableViewCell.xib in Resources */,
 				BAE7642A21A6F4FA00003ECB /* NewsMenuTableViewCell.xib in Resources */,
 				BAE7640821A6763F00003ECB /* NewsPageViewController.xib in Resources */,
 				BA6303F4215B756E009B93E8 /* MeViewController.xib in Resources */,
@@ -520,6 +533,7 @@
 				BABF543921A44EC30088481D /* LoginViewController.xib in Resources */,
 				BA15C0AC215CC4A100BA5CEB /* SelectThemeColorTableViewCell.xib in Resources */,
 				BA6303FA215B7BEA009B93E8 /* Strings_SC.plist in Resources */,
+				BA131C8521A9B961007A5A6D /* ViewCommentViewController.xib in Resources */,
 				BAE7642E21A6F79800003ECB /* NewsPageTableHeaderView.xib in Resources */,
 				BA6303F6215B7BD3009B93E8 /* Strings_EN.plist in Resources */,
 				BA131C8121A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.xib in Resources */,
@@ -598,6 +612,7 @@
 				BAACF7F32158E27500530793 /* BaseViewController.swift in Sources */,
 				BAE7642C21A6F78700003ECB /* NewsPageTableHeaderView.swift in Sources */,
 				BAE7642321A6F4DE00003ECB /* NewsPageImageTableViewCell.swift in Sources */,
+				BA131C8421A9B961007A5A6D /* ViewCommentViewController.swift in Sources */,
 				BAE7642421A6F4DE00003ECB /* NewsPageTextTableViewCell.swift in Sources */,
 				BA15C0AB215CC4A100BA5CEB /* SelectThemeColorTableViewCell.swift in Sources */,
 				BA0FCFC021A94EB200DA4B7F /* AlertUtility.swift in Sources */,
@@ -606,6 +621,7 @@
 				BA131C7321A98316007A5A6D /* MeTableViewCell.swift in Sources */,
 				BAE7640721A6763F00003ECB /* NewsPageViewController.swift in Sources */,
 				BA6303EA215B72D1009B93E8 /* TabBarController.swift in Sources */,
+				BA131C8821A9BA26007A5A6D /* ViewCommentTableViewCell.swift in Sources */,
 				BA15C0A2215C8B8700BA5CEB /* Color.swift in Sources */,
 				BA15C09B215C84AF00BA5CEB /* SubscribeViewController.swift in Sources */,
 				BABF543B21A52AD60088481D /* LoginManager.swift in Sources */,

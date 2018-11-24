@@ -167,7 +167,9 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     }
     
     @IBAction func didPressBtn2(_ sender: UIButton) {
-        
+        let vc = ViewCommentViewController()
+        vc.newsID = self.news_dic["newsID"].intValue
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func didPressBtnAddComment(_ sender: UIButton) {

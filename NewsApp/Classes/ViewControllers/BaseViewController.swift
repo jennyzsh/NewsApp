@@ -13,15 +13,17 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupObserver()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.resetContent()
+//        self.resetContent()
     }
     
     @objc func resetContent() {
@@ -57,10 +59,12 @@ class BaseViewController: UIViewController {
     }
     
     func setNavigationBarRightButtonItem(_ rightButtonItem: UIBarButtonItem?) {
+        self.navigationController?.navigationBar.topItem?.setLeftBarButtonItems(nil, animated: false)
         self.navigationController?.navigationBar.topItem?.setRightBarButton(rightButtonItem, animated: true)
     }
     
     func setNavigationBarLeftButtonItem(_ leftButtonItem: UIBarButtonItem?) {
+        self.navigationController?.navigationBar.topItem?.setRightBarButtonItems(nil, animated: false)
         self.navigationController?.navigationBar.topItem?.setLeftBarButton(leftButtonItem, animated: true)
     }
     
