@@ -21,6 +21,7 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     
     var news_dic: JSON!
     var content_array: JSON!
+    var subscribed = false
     
     
     let headerHeight = CGFloat(150)
@@ -31,6 +32,7 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.retrieveData()
         self.content_array = self.news_dic["content"]
         self.setupLayout()
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
@@ -57,6 +59,26 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
         let back = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backToPrevious))
         back.tintColor = Color.White
         self.setNavigationBarLeftButtonItem(back)
+    }
+    
+    func retrieveData() {
+        //get user's subcribed publishers' list
+        var params: [String: Any] = [:]
+        params["posttype"] = 0 as Any
+        params["userid"] = LoginManager.userID as Any
+        NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/subscribe", parameters: params) { (json) in
+            if json["returnCode"].intValue == 1 {
+                let subscribed_publisher_array = json["returnContent"]["publisher"].arrayValue
+                for subscribed_publisher in subscribed_publisher_array {
+                    if self.news_dic["publisher"].stringValue == subscribed_publisher.stringValue {
+                        self.subscribed = true
+                        break
+                    }
+                }
+            }
+            self.tableView.reloadData()
+        }
+
     }
     
     func setupLayout() {
@@ -130,6 +152,9 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
         header.lblPublisher.text = String(format: StringUtility.getStringOf(keyName: "PublisherStmt"), self.news_dic["publisher"].stringValue)
         header.lblAuthor.text = String(format: StringUtility.getStringOf(keyName: "AuthorStmt"), self.news_dic["author"].stringValue)
         header.lblTime.text = self.news_dic["time"].stringValue
+        header.subscribed = self.subscribed
+        header.publisherID = self.news_dic["publisherID"].intValue
+        header.setupLabelSubscribe()
         return header
     }
     

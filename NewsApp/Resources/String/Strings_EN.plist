@@ -56,6 +56,8 @@
 	<string>Publisher: %@</string>
 	<key>AuthorStmt</key>
 	<string>Author: %@</string>
+	<key>PublishedAtStmt</key>
+	<string>Published at: %@</string>
 	<key>AddCommentAlertTitle</key>
 	<string>Notice</string>
 	<key>AddCommentAlertSuccessMsg</key>
@@ -72,5 +74,7 @@
 	<string>Set Theme Color</string>
 	<key>Publisher</key>
 	<string>Publisher</string>
+	<key>Subscribed</key>
+	<string>Subscribed</string>
 </dict>
 </plist>

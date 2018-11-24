@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk8-VT-5zW">
-                        <rect key="frame" x="10" y="43" width="382" height="16"/>
+                        <rect key="frame" x="10" y="43" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -43,12 +43,19 @@
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQm-CX-6xF">
+                        <rect key="frame" x="53" y="43" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="hk8-VT-5zW" firstAttribute="trailing" secondItem="DSb-fB-t7P" secondAttribute="trailing" id="AdJ-Gb-GKr"/>
+                    <constraint firstItem="FQm-CX-6xF" firstAttribute="centerY" secondItem="hk8-VT-5zW" secondAttribute="centerY" id="F1b-B4-K88"/>
+                    <constraint firstItem="FQm-CX-6xF" firstAttribute="leading" secondItem="hk8-VT-5zW" secondAttribute="trailing" constant="10" id="LUZ-xa-RVk"/>
+                    <constraint firstItem="Rou-A6-obr" firstAttribute="trailing" secondItem="DSb-fB-t7P" secondAttribute="trailing" id="NsL-rS-PxZ"/>
                     <constraint firstItem="DSb-fB-t7P" firstAttribute="top" secondItem="Mxz-mN-odv" secondAttribute="top" constant="20" id="Qmm-Jx-diK"/>
-                    <constraint firstItem="Rou-A6-obr" firstAttribute="trailing" secondItem="hk8-VT-5zW" secondAttribute="trailing" id="R0v-7Y-X74"/>
                     <constraint firstAttribute="trailing" secondItem="DSb-fB-t7P" secondAttribute="trailing" constant="10" id="Y0Y-2f-KMd"/>
                     <constraint firstItem="ASk-Bt-LGI" firstAttribute="leading" secondItem="Rou-A6-obr" secondAttribute="leading" id="asE-dj-JES"/>
                     <constraint firstItem="hk8-VT-5zW" firstAttribute="leading" secondItem="DSb-fB-t7P" secondAttribute="leading" id="fXO-af-gWh"/>
@@ -64,6 +71,7 @@
             <connections>
                 <outlet property="lblAuthor" destination="Rou-A6-obr" id="Bww-hI-IsB"/>
                 <outlet property="lblPublisher" destination="hk8-VT-5zW" id="Dgn-xE-XdH"/>
+                <outlet property="lblSubscribe" destination="FQm-CX-6xF" id="kJH-gD-a92"/>
                 <outlet property="lblTime" destination="ASk-Bt-LGI" id="u4f-IH-KOf"/>
                 <outlet property="lblTitle" destination="DSb-fB-t7P" id="M8W-pp-Kvt"/>
             </connections>

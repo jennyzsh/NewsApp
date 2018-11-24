@@ -56,6 +56,8 @@
 	<string>出版商: %@</string>
 	<key>AuthorStmt</key>
 	<string>作者: %@</string>
+	<key>PublishedAtStmt</key>
+	<string>發佈于: %@</string>
 	<key>AddCommentAlertTitle</key>
 	<string>提示</string>
 	<key>AddCommentAlertSuccessMsg</key>
@@ -72,5 +74,7 @@
 	<string>主題顏色設置</string>
 	<key>Publisher</key>
 	<string>出版商</string>
+	<key>Subscribed</key>
+	<string>已訂閱</string>
 </dict>
 </plist>
