@@ -35,8 +35,12 @@ class BaseViewController: UIViewController {
         UIApplication.shared.applicationIconBadgeNumber = BadgeManager.applicationIconBadgeNumber
     }
     
+    @objc func restartApp() {
+        UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController: TabBarController())
+    }
+    
     func setupObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.resetContent), name: NSNotification.Name(rawValue: NotificationKey.Language_Did_Change_Notify), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.restartApp), name: NSNotification.Name(rawValue: NotificationKey.Language_Did_Change_Notify), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.resetContent), name: Notification.Name(rawValue: NotificationKey.ThemeColor_Did_Change_Notify), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.updateAppIconBadgeNumber), name: Notification.Name(rawValue: NotificationKey.AppIconBadgeNum_Did_Change_Notify), object: nil)
