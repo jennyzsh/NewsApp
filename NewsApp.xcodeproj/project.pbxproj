@@ -330,17 +330,9 @@
 		BACE0A5421589DF700A9DB4F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BACE0A5521589DF700A9DB4F /* Image */,
 				BACE0A5621589DF700A9DB4F /* String */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		BACE0A5521589DF700A9DB4F /* Image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Image;
 			sourceTree = "<group>";
 		};
 		BACE0A5621589DF700A9DB4F /* String */ = {

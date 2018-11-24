@@ -43,11 +43,10 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        resetContent()
     }
     
     override func resetContent() {
+        super.resetContent()
         let lblTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
         lblTitle.sizeToFit()
         lblTitle.text =  "News Page"
@@ -55,7 +54,7 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
         lblTitle.font = UIFont.systemFont(ofSize: 18)
         self.setNavigationBarTitleView(lblTitle)
         
-        let back = UIBarButtonItem(title: "<-", style: .plain, target: self, action: #selector(backToPrevious))
+        let back = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backToPrevious))
         back.tintColor = Color.White
         self.setNavigationBarLeftButtonItem(back)
     }

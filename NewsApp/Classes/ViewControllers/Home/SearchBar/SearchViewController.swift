@@ -32,7 +32,10 @@ class SearchViewController: BaseViewController, UISearchBarDelegate, UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+    }
+    
+    override func resetContent() {
+        super.resetContent()
         //set up Navigation Bar TitleView
         let lblTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
         lblTitle.sizeToFit()
@@ -41,16 +44,11 @@ class SearchViewController: BaseViewController, UISearchBarDelegate, UITableView
         lblTitle.font = UIFont.systemFont(ofSize: 18)
         self.setNavigationBarTitleView(lblTitle)
         
-        //set up Navigation Bar Right BarButton Item
-        let dismiss = UIBarButtonItem(title: "XXXX", style: .plain, target: self, action: #selector(SearchViewController.didPressRightBarButton))
-        dismiss.tintColor = Color.White
-        self.setNavigationBarRightButtonItem(dismiss)
-        
         //set up Navigation Bar Left BarButton Item
-        let back = UIBarButtonItem(title: "<-", style: .plain, target: self, action: #selector(SearchViewController.didPressLeftBarButton))
+        let back = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(SearchViewController.didPressRightBarButton))
         back.tintColor = Color.White
         self.setNavigationBarLeftButtonItem(back)
-
+        
         self.setupSearchBar()
     }
     
@@ -64,10 +62,7 @@ class SearchViewController: BaseViewController, UISearchBarDelegate, UITableView
         var news_params: [String: Any] = [:]
         news_params["posttype"] = 1 as Any
         news_params["keyword"] = self.navigationItem.searchController?.searchBar.text as! Any
-        
-        print("hahahahaha")
-        print(news_params)
-        
+
         NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/news", parameters: news_params, finishedCallback: { (json) in
             
             if json["returnCode"].intValue == 1 {

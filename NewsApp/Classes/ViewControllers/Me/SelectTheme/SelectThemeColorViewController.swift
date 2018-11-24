@@ -31,6 +31,14 @@ class SelectThemeColorViewController: BaseViewController, UITableViewDataSource,
         lblTitle.textAlignment = .center
         lblTitle.font = UIFont.systemFont(ofSize: 18)
         self.setNavigationBarTitleView(lblTitle)
+        
+        let back = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backToPrevious))
+        back.tintColor = Color.White
+        self.setNavigationBarLeftButtonItem(back)
+    }
+    
+    @objc func backToPrevious() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     //MARK: - UITableViewDataSource
