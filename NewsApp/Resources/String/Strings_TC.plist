@@ -54,5 +54,9 @@
 	<string>出版商: %@</string>
 	<key>AuthorStmt</key>
 	<string>作者: %@</string>
+	<key>AddCommentAlertTitle</key>
+	<string>提示</string>
+	<key>AddCommentAlertSuccessMsg</key>
+	<string>您的評論已成功提交</string>
 </dict>
 </plist>

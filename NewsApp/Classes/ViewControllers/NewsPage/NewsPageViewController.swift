@@ -146,7 +146,21 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     }
     
     @IBAction func didPressBtnAddComment(_ sender: UIButton) {
+        var params: [String: Any] = [:]
+        params["posttype"] = 0 as Any
+        params["userid"] = LoginManager.userID as Any
+        params["newsid"] = self.news_dic["newsID"] as Any
+        params["comment"] = self.tvComment.text! as Any
         
+        NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/comment", parameters: params, finishedCallback: { (json) in
+            
+            if json["returnCode"].intValue == 1 {
+                AlertUtility.presentOneButtonSimpleAlert(title: StringUtility.getStringOf(keyName: "AddCommentAlertTitle"), msg: StringUtility.getStringOf(keyName: "AddCommentAlertSuccessMsg"), buttonTitle: StringUtility.getStringOf(keyName: "Confirm"), callback: {
+                    self.tvComment.text = ""
+                    self.dismissCommentView()
+                })
+            }
+        })
     }
     
     

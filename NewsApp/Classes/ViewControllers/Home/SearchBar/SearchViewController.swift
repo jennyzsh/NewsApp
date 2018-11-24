@@ -58,7 +58,6 @@ class SearchViewController: BaseViewController, UISearchBarDelegate, UITableView
     }
     
     func retrieveData() {
-        //get all news
         var news_params: [String: Any] = [:]
         news_params["posttype"] = 1 as Any
         news_params["keyword"] = self.navigationItem.searchController?.searchBar.text as! Any

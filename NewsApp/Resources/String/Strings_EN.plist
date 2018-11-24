@@ -54,5 +54,9 @@
 	<string>Publisher: %@</string>
 	<key>AuthorStmt</key>
 	<string>Author: %@</string>
+	<key>AddCommentAlertTitle</key>
+	<string>Notice</string>
+	<key>AddCommentAlertSuccessMsg</key>
+	<string>Your comment is submitted successfully.</string>
 </dict>
 </plist>
