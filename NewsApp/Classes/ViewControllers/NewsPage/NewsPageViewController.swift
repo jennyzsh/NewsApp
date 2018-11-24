@@ -155,7 +155,7 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
         NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/comment", parameters: params, finishedCallback: { (json) in
             
             if json["returnCode"].intValue == 1 {
-                AlertUtility.presentOneButtonSimpleAlert(title: StringUtility.getStringOf(keyName: "AddCommentAlertTitle"), msg: StringUtility.getStringOf(keyName: "AddCommentAlertSuccessMsg"), buttonTitle: StringUtility.getStringOf(keyName: "Confirm"), callback: {
+                AlertUtility.presentOneButtonSimpleAlert(title: StringUtility.getStringOf(keyName: "AddCommentAlertTitle"), msg: StringUtility.getStringOf(keyName: "AddCommentAlertSuccessMsg"), buttonTitle: StringUtility.getStringOf(keyName: "Confirm"), callback: { (action) in
                     self.tvComment.text = ""
                     self.dismissCommentView()
                 })
