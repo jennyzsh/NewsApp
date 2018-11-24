@@ -58,5 +58,15 @@
 	<string>提示</string>
 	<key>AddCommentAlertSuccessMsg</key>
 	<string>您的評論已成功提交</string>
+	<key>DearUser</key>
+	<string>親愛的用戶</string>
+	<key>UserID</key>
+	<string>用戶 ID: %i</string>
+	<key>MeTableItem_0</key>
+	<string>已訂閱出版商</string>
+	<key>MeTableItem_1</key>
+	<string>語言設置</string>
+	<key>MeTableItem_2</key>
+	<string>主題顏色設置</string>
 </dict>
 </plist>

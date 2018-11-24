@@ -58,5 +58,15 @@
 	<string>Notice</string>
 	<key>AddCommentAlertSuccessMsg</key>
 	<string>Your comment is submitted successfully.</string>
+	<key>DearUser</key>
+	<string>Dear User</string>
+	<key>UserID</key>
+	<string>User ID: %i</string>
+	<key>MeTableItem_0</key>
+	<string>Subscribed Publisher</string>
+	<key>MeTableItem_1</key>
+	<string>Set Language</string>
+	<key>MeTableItem_2</key>
+	<string>Set Theme Color</string>
 </dict>
 </plist>

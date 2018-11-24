@@ -8,11 +8,28 @@
 
 import UIKit
 
-class MeViewController: BaseViewController {
+enum SettingContent: Int {
+    case Subscriber = 0
+    case Language
+    case ThemeColor
+    case SettingNum
+}
 
+class MeViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var lblDearUser: UILabel!
+    @IBOutlet weak var lblUserId: UILabel!
+    @IBOutlet weak var vTableContainer: UIView!
+    @IBOutlet weak var tableContainerConstraintH: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
+    
+    let cellIdentifier = "MeTableViewCell"
+    let cellHeight = 50
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
     
     override func resetContent() {
@@ -24,6 +41,14 @@ class MeViewController: BaseViewController {
         lblTitle.textAlignment = .center
         lblTitle.font = UIFont.systemFont(ofSize: 18)
         self.setNavigationBarTitleView(lblTitle)
+        
+        self.lblDearUser.text = StringUtility.getStringOf(keyName: "DearUser")
+        self.lblUserId.text = String(format: StringUtility.getStringOf(keyName: "UserID"), LoginManager.userID)
+        
+        self.vTableContainer.layer.borderWidth = 1
+        self.vTableContainer.layer.borderColor = Color.Gray.cgColor
+        self.vTableContainer.layer.cornerRadius = 5
+        self.tableContainerConstraintH.constant = CGFloat(self.cellHeight) * CGFloat(SettingContent.SettingNum.rawValue) + 20
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,8 +75,6 @@ class MeViewController: BaseViewController {
     
     func selectThemeColor() {
         self.navigationController?.pushViewController(SelectThemeColorViewController(), animated: true)
-//        let navController = UINavigationController(rootViewController: SelectThemeColorViewController())
-//        self.present(navController, animated: true, completion: nil)
     }
     
     @IBAction func didClickBtnSelectLang(_ sender: UIButton) {
@@ -60,6 +83,39 @@ class MeViewController: BaseViewController {
     
     @IBAction func didPressBtnSelectThemeColor(_ sender: UIButton) {
         self.selectThemeColor()
+    }
+    
+    //MARK: UITableViewDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            break
+        case 1:
+            self.selectLanguage()
+        case 2:
+            self.selectThemeColor()
+        default:
+            break
+        }
+    }
+    
+    //MARK: UITableViewDataSource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return SettingContent.SettingNum.rawValue
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MeTableViewCell
+        cell.lblTitle.text = StringUtility.getStringOf(keyName: String(format: "MeTableItem_%i", indexPath.row))
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(cellHeight)
     }
     
     
