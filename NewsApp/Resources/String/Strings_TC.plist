@@ -6,6 +6,8 @@
 	<string>確認</string>
 	<key>Cancel</key>
 	<string>取消</string>
+	<key>Save</key>
+	<string>保存</string>
 	<key>SelectLang</key>
 	<string>選擇語言</string>
 	<key>SelectThemeColor</key>
@@ -68,5 +70,7 @@
 	<string>語言設置</string>
 	<key>MeTableItem_2</key>
 	<string>主題顏色設置</string>
+	<key>Publisher</key>
+	<string>出版商</string>
 </dict>
 </plist>

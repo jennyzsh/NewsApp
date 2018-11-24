@@ -6,6 +6,8 @@
 	<string>Confirm</string>
 	<key>Cancel</key>
 	<string>Cancel</string>
+	<key>Save</key>
+	<string>Save</string>
 	<key>SelectLang</key>
 	<string>Select Language</string>
 	<key>SelectThemeColor</key>
@@ -68,5 +70,7 @@
 	<string>Set Language</string>
 	<key>MeTableItem_2</key>
 	<string>Set Theme Color</string>
+	<key>Publisher</key>
+	<string>Publisher</string>
 </dict>
 </plist>

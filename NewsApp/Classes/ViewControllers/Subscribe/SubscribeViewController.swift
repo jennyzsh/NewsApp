@@ -62,7 +62,7 @@ class SubscribeViewController: BaseViewController, UITableViewDelegate, UITableV
         //get user's subscribed publisher list
         var params: [String: Any] = [:]
         params["posttype"] = 0 as Any
-        params["userid"] = 10 as Any
+        params["userid"] = LoginManager.userID as Any
         NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/subscribe", parameters: params) { (json) in
             
             if json["returnCode"].intValue == 1 {

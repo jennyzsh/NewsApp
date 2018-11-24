@@ -12,6 +12,10 @@
 		BA0FCFC021A94EB200DA4B7F /* AlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FCFBF21A94EB200DA4B7F /* AlertUtility.swift */; };
 		BA131C7321A98316007A5A6D /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA131C7121A98316007A5A6D /* MeTableViewCell.swift */; };
 		BA131C7421A98316007A5A6D /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA131C7221A98316007A5A6D /* MeTableViewCell.xib */; };
+		BA131C7C21A98A0F007A5A6D /* SetSubscribedPublisherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA131C7A21A98A0F007A5A6D /* SetSubscribedPublisherViewController.swift */; };
+		BA131C7D21A98A0F007A5A6D /* SetSubscribedPublisherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA131C7B21A98A0F007A5A6D /* SetSubscribedPublisherViewController.xib */; };
+		BA131C8021A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA131C7E21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.swift */; };
+		BA131C8121A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA131C7F21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.xib */; };
 		BA15C097215C849B00BA5CEB /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15C095215C849B00BA5CEB /* NoteViewController.swift */; };
 		BA15C098215C849B00BA5CEB /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA15C096215C849B00BA5CEB /* NoteViewController.xib */; };
 		BA15C09B215C84AF00BA5CEB /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15C099215C84AF00BA5CEB /* SubscribeViewController.swift */; };
@@ -70,6 +74,10 @@
 		BA0FCFBF21A94EB200DA4B7F /* AlertUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtility.swift; sourceTree = "<group>"; };
 		BA131C7121A98316007A5A6D /* MeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
 		BA131C7221A98316007A5A6D /* MeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
+		BA131C7A21A98A0F007A5A6D /* SetSubscribedPublisherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSubscribedPublisherViewController.swift; sourceTree = "<group>"; };
+		BA131C7B21A98A0F007A5A6D /* SetSubscribedPublisherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetSubscribedPublisherViewController.xib; sourceTree = "<group>"; };
+		BA131C7E21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSubscribedPublisherTableViewCell.swift; sourceTree = "<group>"; };
+		BA131C7F21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetSubscribedPublisherTableViewCell.xib; sourceTree = "<group>"; };
 		BA15C095215C849B00BA5CEB /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		BA15C096215C849B00BA5CEB /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
 		BA15C099215C84AF00BA5CEB /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +167,15 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		BA131C7521A989BA007A5A6D /* SetSubscribedPublisher */ = {
+			isa = PBXGroup;
+			children = (
+				BA131C7A21A98A0F007A5A6D /* SetSubscribedPublisherViewController.swift */,
+				BA131C7B21A98A0F007A5A6D /* SetSubscribedPublisherViewController.xib */,
+			);
+			path = SetSubscribedPublisher;
+			sourceTree = "<group>";
+		};
 		BA15C093215C848B00BA5CEB /* Note */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +208,7 @@
 		BA6303EB215B754D009B93E8 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				BA131C7521A989BA007A5A6D /* SetSubscribedPublisher */,
 				BA15C0A4215CC45400BA5CEB /* SelectTheme */,
 				BA6303F1215B756E009B93E8 /* MeViewController.swift */,
 				BA6303F2215B756E009B93E8 /* MeViewController.xib */,
@@ -417,6 +435,8 @@
 				BAE7642D21A6F79800003ECB /* NewsPageTableHeaderView.xib */,
 				BA131C7121A98316007A5A6D /* MeTableViewCell.swift */,
 				BA131C7221A98316007A5A6D /* MeTableViewCell.xib */,
+				BA131C7E21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.swift */,
+				BA131C7F21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -489,6 +509,7 @@
 				BAE7640821A6763F00003ECB /* NewsPageViewController.xib in Resources */,
 				BA6303F4215B756E009B93E8 /* MeViewController.xib in Resources */,
 				BA15C09C215C84AF00BA5CEB /* SubscribeViewController.xib in Resources */,
+				BA131C7D21A98A0F007A5A6D /* SetSubscribedPublisherViewController.xib in Resources */,
 				BA6303F0215B7561009B93E8 /* HomeViewController.xib in Resources */,
 				BA15C098215C849B00BA5CEB /* NoteViewController.xib in Resources */,
 				BAE7642521A6F4DE00003ECB /* NewsPageTextTableViewCell.xib in Resources */,
@@ -501,6 +522,7 @@
 				BA6303FA215B7BEA009B93E8 /* Strings_SC.plist in Resources */,
 				BAE7642E21A6F79800003ECB /* NewsPageTableHeaderView.xib in Resources */,
 				BA6303F6215B7BD3009B93E8 /* Strings_EN.plist in Resources */,
+				BA131C8121A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.xib in Resources */,
 				BA131C7421A98316007A5A6D /* MeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,6 +583,8 @@
 				BA630400215B7DA8009B93E8 /* GlobalConst.swift in Sources */,
 				BAACF7F12158CCF400530793 /* NetworkManager.swift in Sources */,
 				BA0FCFBE21A7EA6400DA4B7F /* NewsObj.swift in Sources */,
+				BA131C8021A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.swift in Sources */,
+				BA131C7C21A98A0F007A5A6D /* SetSubscribedPublisherViewController.swift in Sources */,
 				BAE7642921A6F4FA00003ECB /* NewsMenuTableViewCell.swift in Sources */,
 				BAE7641321A6DBCD00003ECB /* String.swift in Sources */,
 				BA6303FC215B7C60009B93E8 /* StringUtility.swift in Sources */,
