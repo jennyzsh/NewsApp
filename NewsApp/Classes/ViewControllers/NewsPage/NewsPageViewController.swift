@@ -25,6 +25,9 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     var news_dic: JSON!
     var content_array: JSON!
     var subscribed = false
+    var newsSaved = false
+    var newsLiked = false
+    var newsDisliked = false
     
     
     let headerHeight = CGFloat(150)
@@ -88,7 +91,7 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
         info_params["userid"] = LoginManager.userID as Any
         info_params["newsid"] = self.news_dic["newsID"] as Any
 
-        NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/subscribe", parameters: info_params) { (json) in
+        NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/getinfo", parameters: info_params) { (json) in
             if json["returnCode"].intValue == 1 {
                 let content = json["returnContent"].dictionaryValue
                 let savedNews = content["savedNews"]?.arrayValue
@@ -96,18 +99,24 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
                 let likedNews = content["likedNews"]?.arrayValue
                 if savedNews?.count != 0 {
                     self.btnSave.setImage(UIImage(named: "star_fill"), for: .normal)
+                    self.newsSaved = true
                 } else {
                     self.btnSave.setImage(UIImage(named: "star"), for: .normal)
+                    self.newsSaved = false
                 }
                 if dislikedNews?.count != 0 {
                     self.btnDislike.setImage(UIImage(named: "dislike_fill"), for: .normal)
+                    self.newsDisliked = true
                 } else {
                     self.btnDislike.setImage(UIImage(named: "dislike"), for: .normal)
+                    self.newsDisliked = false
                 }
                 if likedNews?.count != 0 {
                     self.btnLike.setImage(UIImage(named: "like_fill"), for: .normal)
+                    self.newsLiked = true
                 } else {
                     self.btnLike.setImage(UIImage(named: "like"), for: .normal)
+                    self.newsLiked = false
                 }
             }
         }
@@ -230,23 +239,74 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     }
     
     @IBAction func didPressBtnSave(_ sender: UIButton) {
+        var url = ""
+        if self.newsSaved {
+            url = "http://127.0.0.1:5000/deleteComment"
+        } else {
+            url = "http://127.0.0.1:5000/comment"
+        }
+        
         var params: [String: Any] = [:]
         params["posttype"] = 3 as Any
         params["userid"] = LoginManager.userID as Any
         params["newsid"] = self.news_dic["newsID"] as Any
-        
-        NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/comment", parameters: params, finishedCallback: { (json) in
+        NetworkManager.instance.requestData(.POST, URLString: url, parameters: params, finishedCallback: { (json) in
             if json["returnCode"].intValue == 1 {
-                AlertUtility.presentOneButtonSimpleAlert(title: StringUtility.getStringOf(keyName: "AlertTitle"), msg: StringUtility.getStringOf(keyName: "SaveNewsAlertSuccessMsg"), buttonTitle: StringUtility.getStringOf(keyName: "Confirm"), callback: { (action) in
+                if self.newsSaved {
+                    self.btnSave.setImage(UIImage(named: "star"), for: .normal)
+                } else {
                     self.btnSave.setImage(UIImage(named: "star_fill"), for: .normal)
-                })
+                }
+                self.newsSaved = !self.newsSaved
             }
         })
     }
     
     @IBAction func didPressBtnLike(_ sender: UIButton) {
+        var url = ""
+        if self.newsLiked {
+            url = "http://127.0.0.1:5000/deleteComment"
+        } else {
+            url = "http://127.0.0.1:5000/comment"
+        }
+        
+        var params: [String: Any] = [:]
+        params["posttype"] = 1 as Any
+        params["userid"] = LoginManager.userID as Any
+        params["newsid"] = self.news_dic["newsID"] as Any
+        NetworkManager.instance.requestData(.POST, URLString: url, parameters: params, finishedCallback: { (json) in
+            if json["returnCode"].intValue == 1 {
+                if self.newsLiked {
+                    self.btnLike.setImage(UIImage(named: "like"), for: .normal)
+                } else {
+                    self.btnLike.setImage(UIImage(named: "like_fill"), for: .normal)
+                }
+                self.newsLiked = !self.newsLiked
+            }
+        })
     }
     
     @IBAction func didPressBtnDislike(_ sender: UIButton) {
+        var url = ""
+        if self.newsDisliked {
+            url = "http://127.0.0.1:5000/deleteComment"
+        } else {
+            url = "http://127.0.0.1:5000/comment"
+        }
+        
+        var params: [String: Any] = [:]
+        params["posttype"] = 2 as Any
+        params["userid"] = LoginManager.userID as Any
+        params["newsid"] = self.news_dic["newsID"] as Any
+        NetworkManager.instance.requestData(.POST, URLString: url, parameters: params, finishedCallback: { (json) in
+            if json["returnCode"].intValue == 1 {
+                if self.newsDisliked {
+                    self.btnDislike.setImage(UIImage(named: "dislike"), for: .normal)
+                } else {
+                    self.btnDislike.setImage(UIImage(named: "dislike_fill"), for: .normal)
+                }
+                self.newsDisliked = !self.newsDisliked
+            }
+        })
     }
 }

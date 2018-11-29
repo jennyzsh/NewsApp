@@ -59,13 +59,13 @@ class LoginViewController: UIViewController {
 
         NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/login", parameters: params) { (json) in
             
-            if json["returnCode"] as! Int == 0 {
+            if json["returnCode"].intValue == 0 {
                 self.lblLoginError.isHidden = false
             } else {
                 self.lblLoginError.isHidden = true
                 LoginManager.username = self.tfAccountName.text!
                 LoginManager.password = self.tfPassword.text!
-                LoginManager.userID = Int(json["userID"] as! String)!
+                LoginManager.userID = json["userID"].intValue
                 print("UserID is \(LoginManager.userID)")
                 self.dismiss(animated: true, completion: nil)
             }
