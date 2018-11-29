@@ -9,15 +9,18 @@
 import UIKit
 import SwiftyJSON
 
-class NewsPageViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
+class NewsPageViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btn1: UIButton!
-    @IBOutlet weak var btn2: UIButton!
     @IBOutlet weak var vAddComment: UIView!
     @IBOutlet weak var vCommentArea: UIView!
     @IBOutlet weak var tvComment: UITextView!
     @IBOutlet weak var btnAddComment: UIButton!
+    @IBOutlet weak var tfAddComment: UITextField!
+    @IBOutlet weak var btnViewComment: UIButton!
+    @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var btnLike: UIButton!
+    @IBOutlet weak var btnDislike: UIButton!
     
     var news_dic: JSON!
     var content_array: JSON!
@@ -82,8 +85,6 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     }
     
     func setupLayout() {
-        self.btn1.setTitle(StringUtility.getStringOf(keyName: "AddComment"), for: .normal)
-        self.btn2.setTitle(StringUtility.getStringOf(keyName: "ViewComment"), for: .normal)
         self.btnAddComment.setTitle(StringUtility.getStringOf(keyName: "Send"), for: .normal)
         self.vAddComment.isHidden = true
         self.tvComment.layer.borderWidth = 1
@@ -92,6 +93,12 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
         
         let tapToDismissCommentView = UITapGestureRecognizer(target: self, action: #selector(dismissCommentView))
         self.vAddComment.addGestureRecognizer(tapToDismissCommentView)
+        
+        self.tfAddComment.placeholder = StringUtility.getStringOf(keyName: "AddComment")
+        self.btnViewComment.setImage(UIImage(named: "comment"), for: .normal)
+        self.btnSave.setImage(UIImage(named: "star"), for: .normal)
+        self.btnLike.setImage(UIImage(named: "like"), for: .normal)
+        self.btnDislike.setImage(UIImage(named: "dislike"), for: .normal)
     }
     
     @objc func dismissCommentView() {
@@ -101,6 +108,12 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     
     @objc func backToPrevious() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    //MARK: UITextFieldDelegate
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.vAddComment.resignFirstResponder()
+        self.vAddComment.isHidden = false
     }
     
     //MARK: UITextViewDelegate
@@ -161,16 +174,6 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return self.headerHeight
     }
-
-    @IBAction func didPressBtn1(_ sender: UIButton) {
-        self.vAddComment.isHidden = false
-    }
-    
-    @IBAction func didPressBtn2(_ sender: UIButton) {
-        let vc = ViewCommentViewController()
-        vc.newsID = self.news_dic["newsID"].intValue
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
     
     @IBAction func didPressBtnAddComment(_ sender: UIButton) {
         var params: [String: Any] = [:]
@@ -182,7 +185,7 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
         NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/comment", parameters: params, finishedCallback: { (json) in
             
             if json["returnCode"].intValue == 1 {
-                AlertUtility.presentOneButtonSimpleAlert(title: StringUtility.getStringOf(keyName: "AddCommentAlertTitle"), msg: StringUtility.getStringOf(keyName: "AddCommentAlertSuccessMsg"), buttonTitle: StringUtility.getStringOf(keyName: "Confirm"), callback: { (action) in
+                AlertUtility.presentOneButtonSimpleAlert(title: StringUtility.getStringOf(keyName: "AlertTitle"), msg: StringUtility.getStringOf(keyName: "AddCommentAlertSuccessMsg"), buttonTitle: StringUtility.getStringOf(keyName: "Confirm"), callback: { (action) in
                     self.tvComment.text = ""
                     self.dismissCommentView()
                 })
@@ -190,5 +193,30 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
         })
     }
     
+    @IBAction func didPressBtnViewComment(_ sender: UIButton) {
+        let vc = ViewCommentViewController()
+        vc.newsID = self.news_dic["newsID"].intValue
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
+    @IBAction func didPressBtnSave(_ sender: UIButton) {
+        var params: [String: Any] = [:]
+        params["posttype"] = 3 as Any
+        params["userid"] = LoginManager.userID as Any
+        params["newsid"] = self.news_dic["newsID"] as Any
+        
+        NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/comment", parameters: params, finishedCallback: { (json) in
+            if json["returnCode"].intValue == 1 {
+                AlertUtility.presentOneButtonSimpleAlert(title: StringUtility.getStringOf(keyName: "AlertTitle"), msg: StringUtility.getStringOf(keyName: "SaveNewsAlertSuccessMsg"), buttonTitle: StringUtility.getStringOf(keyName: "Confirm"), callback: { (action) in
+                    self.btnSave.setImage(UIImage(named: "star_fill"), for: .normal)
+                })
+            }
+        })
+    }
+    
+    @IBAction func didPressBtnLike(_ sender: UIButton) {
+    }
+    
+    @IBAction func didPressBtnDislike(_ sender: UIButton) {
+    }
 }

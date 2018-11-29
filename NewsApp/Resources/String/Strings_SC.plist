@@ -58,7 +58,7 @@
 	<string>作者: %@</string>
 	<key>PublishedAtStmt</key>
 	<string>发布于: %@</string>
-	<key>AddCommentAlertTitle</key>
+	<key>AlertTitle</key>
 	<string>提示</string>
 	<key>AddCommentAlertSuccessMsg</key>
 	<string>您的评论已成功提交</string>
@@ -76,5 +76,7 @@
 	<string>出版商</string>
 	<key>Subscribed</key>
 	<string>已订阅</string>
+	<key>SaveNewsAlertSuccessMsg</key>
+	<string>此新闻已保存</string>
 </dict>
 </plist>

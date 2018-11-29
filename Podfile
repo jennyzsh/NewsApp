@@ -10,5 +10,6 @@ target 'NewsApp' do
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireImage', '~> 3.4'
   pod 'IQKeyboardManagerSwift'
+  pod 'FMDB'
 
 end

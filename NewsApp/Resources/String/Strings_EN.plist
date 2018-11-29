@@ -58,7 +58,7 @@
 	<string>Author: %@</string>
 	<key>PublishedAtStmt</key>
 	<string>Published at: %@</string>
-	<key>AddCommentAlertTitle</key>
+	<key>AlertTitle</key>
 	<string>Notice</string>
 	<key>AddCommentAlertSuccessMsg</key>
 	<string>Your comment is submitted successfully.</string>
@@ -76,5 +76,7 @@
 	<string>Publisher</string>
 	<key>Subscribed</key>
 	<string>Subscribed</string>
+	<key>SaveNewsAlertSuccessMsg</key>
+	<string>This news has been saved for later reading.</string>
 </dict>
 </plist>
