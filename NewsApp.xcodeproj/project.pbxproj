@@ -43,6 +43,8 @@
 		BA6303FC215B7C60009B93E8 /* StringUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6303FB215B7C60009B93E8 /* StringUtility.swift */; };
 		BA6303FE215B7CC6009B93E8 /* LanguageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6303FD215B7CC6009B93E8 /* LanguageUtility.swift */; };
 		BA630400215B7DA8009B93E8 /* GlobalConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6303FF215B7DA8009B93E8 /* GlobalConst.swift */; };
+		BA70FF1021AFD3DC00FCF3AD /* NoteHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA70FF0E21AFD3DC00FCF3AD /* NoteHeaderTableViewCell.swift */; };
+		BA70FF1121AFD3DC00FCF3AD /* NoteHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA70FF0F21AFD3DC00FCF3AD /* NoteHeaderTableViewCell.xib */; };
 		BAACF7F12158CCF400530793 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAACF7F02158CCF400530793 /* NetworkManager.swift */; };
 		BAACF7F32158E27500530793 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAACF7F22158E27500530793 /* BaseViewController.swift */; };
 		BABF543821A44EC30088481D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543621A44EC30088481D /* LoginViewController.swift */; };
@@ -112,6 +114,8 @@
 		BA6303FB215B7C60009B93E8 /* StringUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtility.swift; sourceTree = "<group>"; };
 		BA6303FD215B7CC6009B93E8 /* LanguageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageUtility.swift; sourceTree = "<group>"; };
 		BA6303FF215B7DA8009B93E8 /* GlobalConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConst.swift; sourceTree = "<group>"; };
+		BA70FF0E21AFD3DC00FCF3AD /* NoteHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		BA70FF0F21AFD3DC00FCF3AD /* NoteHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		BAACF7F02158CCF400530793 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BAACF7F22158E27500530793 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BABF543621A44EC30088481D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -458,6 +462,8 @@
 				BA131C7F21A98B67007A5A6D /* SetSubscribedPublisherTableViewCell.xib */,
 				BA131C8621A9BA26007A5A6D /* ViewCommentTableViewCell.swift */,
 				BA131C8721A9BA26007A5A6D /* ViewCommentTableViewCell.xib */,
+				BA70FF0E21AFD3DC00FCF3AD /* NoteHeaderTableViewCell.swift */,
+				BA70FF0F21AFD3DC00FCF3AD /* NoteHeaderTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 				BAE7642621A6F4DE00003ECB /* NewsPageImageTableViewCell.xib in Resources */,
 				BA131C8921A9BA26007A5A6D /* ViewCommentTableViewCell.xib in Resources */,
 				BAE7642A21A6F4FA00003ECB /* NewsMenuTableViewCell.xib in Resources */,
+				BA70FF1121AFD3DC00FCF3AD /* NoteHeaderTableViewCell.xib in Resources */,
 				BAE7640821A6763F00003ECB /* NewsPageViewController.xib in Resources */,
 				BA6303F4215B756E009B93E8 /* MeViewController.xib in Resources */,
 				BA15C09C215C84AF00BA5CEB /* SubscribeViewController.xib in Resources */,
@@ -621,6 +628,7 @@
 				BA21DC8D216363C400C97766 /* BadgeManager.swift in Sources */,
 				BA6303F3215B756E009B93E8 /* MeViewController.swift in Sources */,
 				BA15C0A8215CC45400BA5CEB /* SelectThemeColorViewController.swift in Sources */,
+				BA70FF1021AFD3DC00FCF3AD /* NoteHeaderTableViewCell.swift in Sources */,
 				BABF544121A58F7C0088481D /* RegisterViewController.swift in Sources */,
 				BAACF7F32158E27500530793 /* BaseViewController.swift in Sources */,
 				BAE7642C21A6F78700003ECB /* NewsPageTableHeaderView.swift in Sources */,
