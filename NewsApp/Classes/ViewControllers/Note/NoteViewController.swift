@@ -14,11 +14,14 @@ class NoteViewController: BaseViewController, UITableViewDataSource, UITableView
     
     let headerCellIdentifier = "NoteHeaderTableViewCell"
     var tableViewDataIndicator = [false, false, false]
+    var tableViewHeaders = [String]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: headerCellIdentifier, bundle: nil), forCellReuseIdentifier: headerCellIdentifier)
+        self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        self.tableViewHeaders = [StringUtility.getStringOf(keyName: "SavedNews"), StringUtility.getStringOf(keyName: "SavedPassage")]
 
     }
     
@@ -41,7 +44,7 @@ class NoteViewController: BaseViewController, UITableViewDataSource, UITableView
     
     //MARK: UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return self.tableViewHeaders.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +58,7 @@ class NoteViewController: BaseViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: headerCellIdentifier, for: indexPath) as! NoteHeaderTableViewCell
-            cell.lblTitle.text = "Title"
+            cell.lblTitle.text = self.tableViewHeaders[indexPath.section]
             return cell
         } else {
             let cell = UITableViewCell()
@@ -66,9 +69,13 @@ class NoteViewController: BaseViewController, UITableViewDataSource, UITableView
     
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableViewDataIndicator[indexPath.section] = !tableViewDataIndicator[indexPath.section]
-        let sections = IndexSet.init(integer: indexPath.section)
-        tableView.reloadSections(sections, with: .none)
+        if indexPath.row == 0 {
+            tableViewDataIndicator[indexPath.section] = !tableViewDataIndicator[indexPath.section]
+            let sections = IndexSet.init(integer: indexPath.section)
+            tableView.reloadSections(sections, with: .none)
+        } else {
+            
+        }
     }
     
 }

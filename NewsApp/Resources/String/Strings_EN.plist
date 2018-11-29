@@ -78,5 +78,9 @@
 	<string>Subscribed</string>
 	<key>SaveNewsAlertSuccessMsg</key>
 	<string>This news has been saved for later reading.</string>
+	<key>SavedNews</key>
+	<string>Saved News</string>
+	<key>SavedPassage</key>
+	<string>Saved Passage</string>
 </dict>
 </plist>

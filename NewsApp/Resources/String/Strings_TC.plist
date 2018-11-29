@@ -78,5 +78,9 @@
 	<string>已訂閱</string>
 	<key>SaveNewsAlertSuccessMsg</key>
 	<string>此新聞已保存</string>
+	<key>SavedNews</key>
+	<string>已保存的新聞</string>
+	<key>SavedPassage</key>
+	<string>已保存的片段</string>
 </dict>
 </plist>
