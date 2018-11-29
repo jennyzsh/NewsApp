@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		399FB5E0B52C20A2326724AD /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E840BCAA6F75FF91B4D3B7 /* Pods_NewsApp.framework */; };
 		BA0F997521AF9D75004617EB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0F997421AF9D75004617EB /* libsqlite3.0.tbd */; };
+		BA0F997721AF9DC2004617EB /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0F997621AF9DC2004617EB /* DatabaseManager.swift */; };
 		BA0FCFBE21A7EA6400DA4B7F /* NewsObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FCFBD21A7EA6400DA4B7F /* NewsObj.swift */; };
 		BA0FCFC021A94EB200DA4B7F /* AlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FCFBF21A94EB200DA4B7F /* AlertUtility.swift */; };
 		BA131C7321A98316007A5A6D /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA131C7121A98316007A5A6D /* MeTableViewCell.swift */; };
@@ -77,6 +78,7 @@
 		90D7FCDC62E02D6991384A7B /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BA0F997121AF9D2F004617EB /* NewsApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NewsApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		BA0F997421AF9D75004617EB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		BA0F997621AF9DC2004617EB /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		BA0FCFBD21A7EA6400DA4B7F /* NewsObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsObj.swift; sourceTree = "<group>"; };
 		BA0FCFBF21A94EB200DA4B7F /* AlertUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtility.swift; sourceTree = "<group>"; };
 		BA131C7121A98316007A5A6D /* MeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				BAACF7F02158CCF400530793 /* NetworkManager.swift */,
 				BA21DC8C216363C400C97766 /* BadgeManager.swift */,
 				BABF543A21A52AD60088481D /* LoginManager.swift */,
+				BA0F997621AF9DC2004617EB /* DatabaseManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				BA131C7C21A98A0F007A5A6D /* SetSubscribedPublisherViewController.swift in Sources */,
 				BAE7642921A6F4FA00003ECB /* NewsMenuTableViewCell.swift in Sources */,
 				BAE7641321A6DBCD00003ECB /* String.swift in Sources */,
+				BA0F997721AF9DC2004617EB /* DatabaseManager.swift in Sources */,
 				BA6303FC215B7C60009B93E8 /* StringUtility.swift in Sources */,
 				BA15C097215C849B00BA5CEB /* NoteViewController.swift in Sources */,
 				BAE7640221A673DB00003ECB /* AddCommentViewController.swift in Sources */,
