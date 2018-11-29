@@ -81,6 +81,36 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
             }
             self.tableView.reloadData()
         }
+        
+        //get user's saved news, liked news, disliked news
+        var info_params: [String: Any] = [:]
+        info_params["posttype"] = 1 as Any
+        info_params["userid"] = LoginManager.userID as Any
+        info_params["newsid"] = self.news_dic["newsID"] as Any
+
+        NetworkManager.instance.requestData(.POST, URLString: "http://127.0.0.1:5000/subscribe", parameters: info_params) { (json) in
+            if json["returnCode"].intValue == 1 {
+                let content = json["returnContent"].dictionaryValue
+                let savedNews = content["savedNews"]?.arrayValue
+                let dislikedNews = content["dislikedNews"]?.arrayValue
+                let likedNews = content["likedNews"]?.arrayValue
+                if savedNews?.count != 0 {
+                    self.btnSave.setImage(UIImage(named: "star_fill"), for: .normal)
+                } else {
+                    self.btnSave.setImage(UIImage(named: "star"), for: .normal)
+                }
+                if dislikedNews?.count != 0 {
+                    self.btnDislike.setImage(UIImage(named: "dislike_fill"), for: .normal)
+                } else {
+                    self.btnDislike.setImage(UIImage(named: "dislike"), for: .normal)
+                }
+                if likedNews?.count != 0 {
+                    self.btnLike.setImage(UIImage(named: "like_fill"), for: .normal)
+                } else {
+                    self.btnLike.setImage(UIImage(named: "like"), for: .normal)
+                }
+            }
+        }
 
     }
     
