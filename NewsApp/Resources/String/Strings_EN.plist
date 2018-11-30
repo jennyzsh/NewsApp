@@ -82,5 +82,7 @@
 	<string>Saved News</string>
 	<key>SavedPassage</key>
 	<string>Saved Passage</string>
+	<key>SavePassage</key>
+	<string>Do you want to save the passage?</string>
 </dict>
 </plist>

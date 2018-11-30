@@ -82,5 +82,7 @@
 	<string>已保存的新闻</string>
 	<key>SavedPassage</key>
 	<string>已保存的片段</string>
+	<key>SavePassage</key>
+	<string>你是否想保存该段落？</string>
 </dict>
 </plist>

@@ -190,6 +190,9 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
         if self.content_array[indexPath.row]["type"].stringValue == "text" {
             let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as! NewsPageTextTableViewCell
             cell.lblContent.text = self.content_array[indexPath.row]["content"].stringValue
+            let longPressGesture = MyLongPressGestureRecognizer(target: self, action: #selector(handleLongPress(sender:)))
+            cell.lblContent.addGestureRecognizer(longPressGesture)
+            longPressGesture.passage = self.content_array[indexPath.row]["content"].stringValue
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: imageCellIdentifier, for: indexPath) as! NewsPageImageTableViewCell
@@ -212,6 +215,18 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return self.headerHeight
+    }
+    
+    @objc func handleLongPress(sender: MyLongPressGestureRecognizer) {
+        if sender.state == UIGestureRecognizerState.began {
+            let actionSheet = UIAlertController.init(title: StringUtility.getStringOf(keyName: "SavePassage"), message: nil, preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: StringUtility.getStringOf(keyName: "Cancel"), style: .cancel, handler: nil))
+            actionSheet.addAction(UIAlertAction(title: StringUtility.getStringOf(keyName: "Save"), style: .default, handler: { (action) in
+                print(sender.passage)
+                
+            }))
+            self.present(actionSheet, animated: true, completion: nil)
+        }
     }
     
     @IBAction func didPressBtnAddComment(_ sender: UIButton) {
@@ -309,4 +324,9 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
             }
         })
     }
+}
+
+
+class MyLongPressGestureRecognizer: UILongPressGestureRecognizer {
+    var passage = ""
 }
