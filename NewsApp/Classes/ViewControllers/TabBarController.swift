@@ -19,19 +19,19 @@ class TabBarController: UITabBarController {
         self.changeThemeColor()
         
         let homeViewController = HomeViewController()
-        homeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        homeViewController.tabBarItem = UITabBarItem(title: StringUtility.getStringOf(keyName: "Home"), image: UIImage(named: "home"), tag: 0)
         vcList.append(homeViewController)
         
         let subscribeViewController = SubscribeViewController()
-        subscribeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        subscribeViewController.tabBarItem = UITabBarItem(title: StringUtility.getStringOf(keyName: "Subscribe"), image: UIImage(named: "subscribe"), tag: 1)
         vcList.append(subscribeViewController)
         
         let noteViewController = NoteViewController()
-        noteViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
+        noteViewController.tabBarItem = UITabBarItem(title: StringUtility.getStringOf(keyName: "Note"), image: UIImage(named: "note"), tag: 2)
         vcList.append(noteViewController)
         
         let meViewController = MeViewController()
-        meViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 3)
+        meViewController.tabBarItem = UITabBarItem(title: StringUtility.getStringOf(keyName: "Me"), image: UIImage(named: "me"), tag: 3)
         vcList.append(meViewController)
         
         self.viewControllers = vcList
