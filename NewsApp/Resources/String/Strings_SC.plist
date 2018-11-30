@@ -8,6 +8,8 @@
 	<string>取消</string>
 	<key>Save</key>
 	<string>保存</string>
+	<key>Delete</key>
+	<string>刪除</string>
 	<key>SelectLang</key>
 	<string>选择语言</string>
 	<key>SelectThemeColor</key>

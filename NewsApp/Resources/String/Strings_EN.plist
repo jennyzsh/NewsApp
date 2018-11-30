@@ -8,6 +8,8 @@
 	<string>Cancel</string>
 	<key>Save</key>
 	<string>Save</string>
+	<key>Delete</key>
+	<string>Delete</string>
 	<key>SelectLang</key>
 	<string>Select Language</string>
 	<key>SelectThemeColor</key>

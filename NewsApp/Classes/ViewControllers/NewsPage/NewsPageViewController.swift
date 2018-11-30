@@ -51,6 +51,7 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        DatabaseManager.shared.createDatabase()
     }
     
     override func resetContent() {
@@ -223,9 +224,7 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
             let actionSheet = UIAlertController.init(title: StringUtility.getStringOf(keyName: "SavePassage"), message: nil, preferredStyle: .actionSheet)
             actionSheet.addAction(UIAlertAction(title: StringUtility.getStringOf(keyName: "Cancel"), style: .cancel, handler: nil))
             actionSheet.addAction(UIAlertAction(title: StringUtility.getStringOf(keyName: "Save"), style: .default, handler: { (action) in
-                print(sender.passage)
-                print(sender.newsTitle)
-                
+                DatabaseManager.shared.insertSavedPassage(title: sender.newsTitle, passage: sender.passage)
             }))
             self.present(actionSheet, animated: true, completion: nil)
         }

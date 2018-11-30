@@ -45,6 +45,8 @@
 		BA630400215B7DA8009B93E8 /* GlobalConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6303FF215B7DA8009B93E8 /* GlobalConst.swift */; };
 		BA70FF1021AFD3DC00FCF3AD /* NoteHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA70FF0E21AFD3DC00FCF3AD /* NoteHeaderTableViewCell.swift */; };
 		BA70FF1121AFD3DC00FCF3AD /* NoteHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA70FF0F21AFD3DC00FCF3AD /* NoteHeaderTableViewCell.xib */; };
+		BA70FF1421B119E800FCF3AD /* SavedPassageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA70FF1221B119E800FCF3AD /* SavedPassageTableViewCell.swift */; };
+		BA70FF1521B119E800FCF3AD /* SavedPassageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA70FF1321B119E800FCF3AD /* SavedPassageTableViewCell.xib */; };
 		BAACF7F12158CCF400530793 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAACF7F02158CCF400530793 /* NetworkManager.swift */; };
 		BAACF7F32158E27500530793 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAACF7F22158E27500530793 /* BaseViewController.swift */; };
 		BABF543821A44EC30088481D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF543621A44EC30088481D /* LoginViewController.swift */; };
@@ -116,6 +118,8 @@
 		BA6303FF215B7DA8009B93E8 /* GlobalConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConst.swift; sourceTree = "<group>"; };
 		BA70FF0E21AFD3DC00FCF3AD /* NoteHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		BA70FF0F21AFD3DC00FCF3AD /* NoteHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		BA70FF1221B119E800FCF3AD /* SavedPassageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPassageTableViewCell.swift; sourceTree = "<group>"; };
+		BA70FF1321B119E800FCF3AD /* SavedPassageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedPassageTableViewCell.xib; sourceTree = "<group>"; };
 		BAACF7F02158CCF400530793 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BAACF7F22158E27500530793 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BABF543621A44EC30088481D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -464,6 +468,8 @@
 				BA131C8721A9BA26007A5A6D /* ViewCommentTableViewCell.xib */,
 				BA70FF0E21AFD3DC00FCF3AD /* NoteHeaderTableViewCell.swift */,
 				BA70FF0F21AFD3DC00FCF3AD /* NoteHeaderTableViewCell.xib */,
+				BA70FF1221B119E800FCF3AD /* SavedPassageTableViewCell.swift */,
+				BA70FF1321B119E800FCF3AD /* SavedPassageTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -547,6 +553,7 @@
 				BA15C0A7215CC45400BA5CEB /* SelectThemeColorViewController.xib in Resources */,
 				BA6303F8215B7BE0009B93E8 /* Strings_TC.plist in Resources */,
 				BABF544221A58F7C0088481D /* RegisterViewController.xib in Resources */,
+				BA70FF1521B119E800FCF3AD /* SavedPassageTableViewCell.xib in Resources */,
 				BABF543921A44EC30088481D /* LoginViewController.xib in Resources */,
 				BA15C0AC215CC4A100BA5CEB /* SelectThemeColorTableViewCell.xib in Resources */,
 				BA6303FA215B7BEA009B93E8 /* Strings_SC.plist in Resources */,
@@ -640,6 +647,7 @@
 				BACE0A3E215897AF00A9DB4F /* ViewController.swift in Sources */,
 				BAD35BB5215E2F8D006BC7B3 /* SearchViewController.swift in Sources */,
 				BA131C7321A98316007A5A6D /* MeTableViewCell.swift in Sources */,
+				BA70FF1421B119E800FCF3AD /* SavedPassageTableViewCell.swift in Sources */,
 				BAE7640721A6763F00003ECB /* NewsPageViewController.swift in Sources */,
 				BA6303EA215B72D1009B93E8 /* TabBarController.swift in Sources */,
 				BA131C8821A9BA26007A5A6D /* ViewCommentTableViewCell.swift in Sources */,

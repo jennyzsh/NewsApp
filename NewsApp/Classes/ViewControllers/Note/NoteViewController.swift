@@ -15,15 +15,18 @@ class NoteViewController: BaseViewController, UITableViewDataSource, UITableView
     
     let headerCellIdentifier = "NoteHeaderTableViewCell"
     let newsCellIdentifier = "NewsMenuTableViewCell"
+    let savedPassageCellIdentifier = "SavedPassageTableViewCell"
     var tableViewDataIndicator = [false, false, false]
     var tableViewHeaders = [String]()
     var savedNewsContent:[JSON] = []
+    var savedPassageContent = Array<Any>()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: headerCellIdentifier, bundle: nil), forCellReuseIdentifier: headerCellIdentifier)
         self.tableView.register(UINib(nibName: newsCellIdentifier, bundle: nil), forCellReuseIdentifier: newsCellIdentifier)
+        self.tableView.register(UINib(nibName: savedPassageCellIdentifier, bundle: nil), forCellReuseIdentifier: savedPassageCellIdentifier)
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
         self.tableViewHeaders = [StringUtility.getStringOf(keyName: "SavedNews"), StringUtility.getStringOf(keyName: "SavedPassage")]
 
@@ -60,6 +63,9 @@ class NoteViewController: BaseViewController, UITableViewDataSource, UITableView
                 self.tableView.reloadData()
             }
         })
+        
+        //get saved passage
+        self.savedPassageContent = DatabaseManager.shared.retrieveSavedPassage()
     }
     
     
@@ -73,7 +79,7 @@ class NoteViewController: BaseViewController, UITableViewDataSource, UITableView
             if section == 0 {
                 return self.savedNewsContent.count + 1
             } else if section == 1 {
-                
+                return self.savedPassageContent.count + 1
             }
             return 3
         } else {
@@ -104,13 +110,28 @@ class NoteViewController: BaseViewController, UITableViewDataSource, UITableView
                     cell.ivThumbnailConstraintW.constant = 0
                 }
                 return cell
+            } else if indexPath.section == 1 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: savedPassageCellIdentifier, for: indexPath) as! SavedPassageTableViewCell
+                let dic = self.savedPassageContent[dataIndex] as! [String: Any]
+                cell.lblPassage.text = dic["passage"] as! String
+                cell.lblTitle.text = dic["title"] as! String
+                let tap = MyTapGestureRecognizer(target: self, action: #selector(didPressBtnDelete(sender:)))
+                cell.btnDelete.addGestureRecognizer(tap)
+                tap.id = dic["id"] as! Int
+                tap.index = dataIndex
+                return cell
+            } else {
+                let cell = UITableViewCell()
+                cell.textLabel?.text = "Cell"
+                return cell
             }
-            
-            
-            let cell = UITableViewCell()
-            cell.textLabel?.text = "Cell"
-            return cell
         }
+    }
+    
+    @objc func didPressBtnDelete(sender: MyTapGestureRecognizer) {
+        DatabaseManager.shared.deletePassage(ID: Int32(sender.id))
+        self.savedPassageContent.remove(at: sender.index)
+        self.tableView.reloadData()
     }
     
     //MARK: UITableViewDelegate
@@ -120,13 +141,24 @@ class NoteViewController: BaseViewController, UITableViewDataSource, UITableView
             let sections = IndexSet.init(integer: indexPath.section)
             tableView.reloadSections(sections, with: .none)
         } else {
-            let dataIndex = indexPath.row - 1
-            let newsID = self.savedNewsContent[dataIndex]["newsID"].intValue
-            let news_dic = self.savedNewsContent[dataIndex]
-            let newsPageVC = NewsPageViewController()
-            newsPageVC.news_dic = news_dic
-            self.navigationController?.pushViewController(newsPageVC, animated: true)
+            if indexPath.section == 0 {
+                let dataIndex = indexPath.row - 1
+                let newsID = self.savedNewsContent[dataIndex]["newsID"].intValue
+                let news_dic = self.savedNewsContent[dataIndex]
+                let newsPageVC = NewsPageViewController()
+                newsPageVC.news_dic = news_dic
+                self.navigationController?.pushViewController(newsPageVC, animated: true)
+            } else if indexPath.section == 1 {
+                
+            }
+            
         }
     }
     
+}
+
+
+class MyTapGestureRecognizer: UITapGestureRecognizer {
+    var id = -1
+    var index = -1
 }
