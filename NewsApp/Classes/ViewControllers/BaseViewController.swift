@@ -27,8 +27,8 @@ class BaseViewController: UIViewController {
     
     @objc func resetContent() {
         self.setNavigationBarBackground(color: Color.themeColorList[Color.themeColor.rawValue])
-        self.setNavigationBarRightButtonItem(nil)
-        self.setNavigationBarLeftButtonItem(nil)
+//        self.setNavigationBarRightButtonItem(nil)
+//        self.setNavigationBarLeftButtonItem(nil)
 
     }
     
