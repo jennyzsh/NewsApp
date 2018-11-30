@@ -193,6 +193,7 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
             let longPressGesture = MyLongPressGestureRecognizer(target: self, action: #selector(handleLongPress(sender:)))
             cell.lblContent.addGestureRecognizer(longPressGesture)
             longPressGesture.passage = self.content_array[indexPath.row]["content"].stringValue
+            longPressGesture.newsTitle = self.news_dic["title"].stringValue
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: imageCellIdentifier, for: indexPath) as! NewsPageImageTableViewCell
@@ -223,6 +224,7 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
             actionSheet.addAction(UIAlertAction(title: StringUtility.getStringOf(keyName: "Cancel"), style: .cancel, handler: nil))
             actionSheet.addAction(UIAlertAction(title: StringUtility.getStringOf(keyName: "Save"), style: .default, handler: { (action) in
                 print(sender.passage)
+                print(sender.newsTitle)
                 
             }))
             self.present(actionSheet, animated: true, completion: nil)
@@ -329,4 +331,5 @@ class NewsPageViewController: BaseViewController, UITableViewDataSource, UITable
 
 class MyLongPressGestureRecognizer: UILongPressGestureRecognizer {
     var passage = ""
+    var newsTitle = ""
 }
