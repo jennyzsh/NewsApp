@@ -2,7 +2,7 @@
 
 A client app to display news which is crawled from multiple financial website.
 
-##Main Functions:
+## Main Functions:
 * Display all news 
 * Display news subscribed by user
 * Search news based on keyword
@@ -11,13 +11,13 @@ A client app to display news which is crawled from multiple financial website.
 * View the saved news and the saved passage
 
 
-##Working Environment:
+## Working Environment:
 * Xcode 10.0
 * Swift 4
 * Deployment target 11.0
 * iPhone only
 
-##Installation:
+## Installation:
     1. Make sure Cocoapods is installed in your Mac
     2. Open Terminal in the root folder of the project
     3. Type "pod install" in Terminal.
